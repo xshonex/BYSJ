@@ -1,0 +1,28 @@
+{
+  "name": "ziyuan",
+  "version": "1.0.0",
+  "description": "## 技术框架 采用uni-app开发，适配支持H5+小程序+APP，使用Hbuilder导入即可运行。",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:h5": "cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
+    "build:h5": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@dcloudio/uni-app": "^2.0.2-4070620250821001",
+    "@dcloudio/uni-h5": "^2.0.2-4070620250821001",
+    "uview-ui": "^1.8.4",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@dcloudio/uni-cli-i18n": "^2.0.2-4070620250821001",
+    "@dcloudio/uni-cli-shared": "^2.0.2-4070620250821001",
+    "@dcloudio/uni-mp-compiler": "^3.0.0-alpha-3021020211012001",
+    "@dcloudio/vue-cli-plugin-uni": "^2.0.2-4070620250821001",
+    "@vue/cli-service": "^5.0.9",
+    "cross-env": "^10.0.0"
+  }
+}
