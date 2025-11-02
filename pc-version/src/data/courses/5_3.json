@@ -1,0 +1,75 @@
+{
+  "id": "5_3",
+  "title": "建筑智能化",
+  "category": "电气",
+  "students": 1580,
+  "duration": "27小时",
+  "progress": "43%",
+  "image": "/images/learn/electrical.jpg",
+  "chapters": [
+    {
+      "title": "第一章 智能化基础",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "智能建筑概述",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "智能建筑标准",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "智能化系统架构",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 智能化系统",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "楼宇自控系统",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "安防监控系统",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "火灾报警系统",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 智能化应用",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "物联网技术应用",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "大数据与AI应用",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "智能家居系统",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解建筑智能化的基本原理和应用技术，是电气专业的前沿课程。</p><p>内容包括智能化基础、智能化系统和智能化应用等，培养学生的建筑智能化设计能力。</p>"
+}

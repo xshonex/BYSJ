@@ -1,0 +1,75 @@
+{
+  "id": "1_3",
+  "title": "建筑历史与理论",
+  "category": "建筑",
+  "students": 1320,
+  "duration": "24小时",
+  "progress": "45%",
+  "image": "/images/learn/arch.jpg",
+  "chapters": [
+    {
+      "title": "第一章 中国建筑史",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "古代建筑发展",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "传统建筑特点",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "近代建筑演变",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 西方建筑史",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "古典建筑时期",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "中世纪建筑",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "近现代建筑流派",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 建筑理论发展",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "建筑美学理论",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "建筑批评方法",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "当代建筑思潮",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统介绍建筑历史发展和理论体系，是建筑专业的重要理论课程。</p><p>内容包括中国建筑史、西方建筑史和建筑理论发展等，培养学生的专业素养和文化底蕴。</p>"
+}

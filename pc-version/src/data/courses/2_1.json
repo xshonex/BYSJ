@@ -1,0 +1,75 @@
+{
+  "id": "2_1",
+  "title": "混凝土结构设计",
+  "category": "结构",
+  "students": 1650,
+  "duration": "28小时",
+  "progress": "40%",
+  "image": "/images/learn/structure.jpg",
+  "chapters": [
+    {
+      "title": "第一章 混凝土结构基本原理",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "混凝土材料性能",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "钢筋混凝土受力特点",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "设计基本规定",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 受弯构件设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "受弯构件正截面承载力",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "受弯构件斜截面承载力",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "构造要求与配筋图",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 受压构件设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "轴心受压构件",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "偏心受压构件",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "受压构件构造设计",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解混凝土结构设计的基本原理和方法，是结构专业的核心课程。</p><p>内容包括混凝土材料性能、受弯构件设计和受压构件设计等，培养学生的结构设计能力。</p>"
+  }

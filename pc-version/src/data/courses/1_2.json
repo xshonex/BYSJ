@@ -1,0 +1,75 @@
+{
+  "id": "1_2",
+  "title": "建筑设计原理",
+  "category": "建筑",
+  "students": 1450,
+  "duration": "22小时",
+  "progress": "50%",
+  "image": "/images/learn/arch.jpg",
+  "chapters": [
+    {
+      "title": "第一章 居住建筑设计",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "住宅设计标准",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "户型设计方法",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "居住空间优化",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 公共建筑设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "公共建筑类型特点",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "功能分区与流线组织",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "公共空间设计",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 可持续建筑设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "绿色建筑概念",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "节能设计策略",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "生态建筑案例分析",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程深入讲解各类建筑的设计原理和方法，是建筑专业的核心课程。</p><p>内容包括居住建筑设计、公共建筑设计和可持续建筑设计等重要内容，培养学生的专业设计能力。</p>"
+}

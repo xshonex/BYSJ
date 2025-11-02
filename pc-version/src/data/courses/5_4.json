@@ -1,0 +1,75 @@
+{
+  "id": "5_4",
+  "title": "电气安全与节能",
+  "category": "电气",
+  "students": 1480,
+  "duration": "26小时",
+  "progress": "41%",
+  "image": "/images/learn/electrical.jpg",
+  "chapters": [
+    {
+      "title": "第一章 电气安全基础",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "电气安全概念",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "电击防护措施",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "接地与接零系统",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 电气安全设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "电气防火防爆",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "安全防护设计",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "安全评估与认证",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 电气节能技术",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "节能技术基础",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "节能产品应用",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "能效管理系统",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解电气安全与节能的基本原理和技术方法，是电气专业的重要课程。</p><p>内容包括电气安全基础、电气安全设计和电气节能技术等，培养学生的电气安全意识和节能能力。</p>"
+}

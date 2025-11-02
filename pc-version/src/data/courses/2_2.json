@@ -1,0 +1,75 @@
+{
+  "id": "2_2",
+  "title": "钢结构设计",
+  "category": "结构",
+  "students": 1420,
+  "duration": "26小时",
+  "progress": "35%",
+  "image": "/images/learn/structure.jpg",
+  "chapters": [
+    {
+      "title": "第一章 钢结构基本原理",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "钢材基本性能",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "钢结构连接方式",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "钢结构设计原则",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 轴心受力构件设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "轴心受压构件稳定计算",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "轴心受拉构件强度计算",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "构件截面选择",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 受弯构件设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "钢梁强度计算",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "钢梁稳定计算",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "钢梁构造要求",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程详细讲解钢结构设计的基本理论和方法，是结构专业的重要课程。</p><p>内容包括钢材性能、连接设计、轴心构件和受弯构件设计等，培养学生的钢结构设计能力。</p>"
+}

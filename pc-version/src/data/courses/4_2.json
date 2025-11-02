@@ -1,0 +1,75 @@
+{
+  "id": "4_2",
+  "title": "制冷技术",
+  "category": "暖通",
+  "students": 1420,
+  "duration": "26小时",
+  "progress": "40%",
+  "image": "/images/learn/hvac.jpg",
+  "chapters": [
+    {
+      "title": "第一章 制冷原理",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "蒸汽压缩制冷循环",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "制冷剂特性",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "制冷循环分析",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 制冷设备",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "压缩机类型",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "冷凝器与蒸发器",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "制冷辅助设备",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 制冷系统设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "制冷系统匹配",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "制冷管路设计",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "制冷系统节能技术",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解制冷技术的基本原理和方法，是暖通专业的核心课程。</p><p>内容包括制冷原理、制冷设备和制冷系统设计等，培养学生的制冷系统设计能力。</p>"
+}

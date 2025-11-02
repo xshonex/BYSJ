@@ -1,0 +1,75 @@
+{
+  "id": "4_4",
+  "title": "建筑节能技术",
+  "category": "暖通",
+  "students": 1580,
+  "duration": "27小时",
+  "progress": "42%",
+  "image": "/images/learn/hvac.jpg",
+  "chapters": [
+    {
+      "title": "第一章 建筑节能基础",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "建筑能耗分析",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "节能标准规范",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "节能评估方法",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 节能技术应用",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "围护结构节能",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "空调系统节能",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "可再生能源利用",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 节能系统设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "节能优化方法",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "能耗监测系统",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "节能改造案例",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解建筑节能技术的基本原理和应用方法，是暖通专业的前沿课程。</p><p>内容包括建筑节能基础、节能技术应用和节能系统设计等，培养学生的建筑节能意识和能力。</p>"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "3_2",
+  "title": "排水工程",
+  "category": "给排水",
+  "students": 1350,
+  "duration": "24小时",
+  "progress": "40%",
+  "image": "/images/learn/water.jpg",
+  "chapters": [
+    {
+      "title": "第一章 排水系统概述",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "排水系统分类",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "污水量计算",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "排水系统布置",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 排水管渠设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "管渠水力计算",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "管渠材料与接口",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "排水管网优化",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 排水泵站设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "泵站类型选择",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "泵的选型与布置",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "泵站设计案例",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解排水工程的基本理论和设计方法，是给排水专业的核心课程。</p><p>内容包括排水系统概述、排水管渠设计和排水泵站设计等，培养学生解决排水工程实际问题的能力。</p>"
+}

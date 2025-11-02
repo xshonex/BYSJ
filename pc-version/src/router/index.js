@@ -17,14 +17,7 @@ const routes = [
       title: '学习 - 刘传濠的个人学习资料系统'
     }
   },
-  {
-    path: '/me',
-    name: 'Me',
-    component: () => import('@/pages/Me.vue'),
-    meta: {
-      title: '我的 - 刘传濠的个人学习资料系统'
-    }
-  },
+  // {\n  //   path: '/me',\n  //   name: 'Me',\n  //   component: () => import('@/pages/Me.vue'),\n  //   meta: {\n  //     title: '我的 - 刘传濠的个人学习资料系统'\n  //   }\n  // },
   {
     path: '/course/:id',
     name: 'CourseDetail',
@@ -34,14 +27,7 @@ const routes = [
       title: '课程详情 - 刘传濠的个人学习资料系统'
     }
   },
-  {
-    path: '/search',
-    name: 'Search',
-    component: () => import('@/pages/Search.vue'),
-    meta: {
-      title: '搜索 - 刘传濠的个人学习资料系统'
-    }
-  },
+  // {\n  //   path: '/search',\n  //   name: 'Search',\n  //   component: () => import('@/pages/Search.vue'),\n  //   meta: {\n  //     title: '搜索 - 刘传濠的个人学习资料系统'\n  //   }\n  // },
   // 404页面
   {
     path: '/:pathMatch(.*)*',

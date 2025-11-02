@@ -1,0 +1,75 @@
+{
+  "id": "5_2",
+  "title": "建筑照明",
+  "category": "电气",
+  "students": 1450,
+  "duration": "25小时",
+  "progress": "42%",
+  "image": "/images/learn/electrical.jpg",
+  "chapters": [
+    {
+      "title": "第一章 照明基础",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "照明基本概念",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "照明标准规范",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "照明质量评价",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 照明光源与灯具",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "常用照明光源",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "灯具类型与选择",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "LED照明技术",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 照明系统设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "照明计算方法",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "照明控制技术",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "绿色照明设计",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解建筑照明的基本原理和设计方法，是电气专业的重要课程。</p><p>内容包括照明基础、照明光源与灯具和照明系统设计等，培养学生的建筑照明设计能力。</p>"
+}

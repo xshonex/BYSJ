@@ -1,0 +1,75 @@
+{
+  "id": "2_3",
+  "title": "结构力学",
+  "category": "结构",
+  "students": 1780,
+  "duration": "30小时",
+  "progress": "25%",
+  "image": "/images/learn/structure.jpg",
+  "chapters": [
+    {
+      "title": "第一章 结构几何组成分析",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "几何不变体系原理",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "几何组成分析方法",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "常见结构类型分析",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 静定结构内力分析",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "静定梁的内力计算",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "静定刚架分析",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "静定桁架内力计算",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 超静定结构分析",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "力法基本原理",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "位移法应用",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "力矩分配法",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解结构力学的基本理论和分析方法，是结构专业的核心基础课程。</p><p>内容包括结构几何组成分析、静定结构内力计算和超静定结构分析等，培养学生的结构分析能力。</p>"
+}

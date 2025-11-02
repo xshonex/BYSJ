@@ -20,5 +20,7 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true
-  }
+  },
+  // 配置静态资源目录
+  publicDir: path.resolve(__dirname, '../static')
 })

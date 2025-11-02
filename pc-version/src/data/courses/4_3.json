@@ -1,0 +1,75 @@
+{
+  "id": "4_3",
+  "title": "通风工程",
+  "category": "暖通",
+  "students": 1350,
+  "duration": "25小时",
+  "progress": "38%",
+  "image": "/images/learn/hvac.jpg",
+  "chapters": [
+    {
+      "title": "第一章 通风基础",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "通风系统组成",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "通风方式分类",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "通风量计算",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 通风设备",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "风机类型与选择",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "通风管道设计",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "通风附件选型",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 通风系统设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "工业通风",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "建筑通风",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "通风系统节能",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解通风工程的基本原理和设计方法，是暖通专业的重要课程。</p><p>内容包括通风基础、通风设备和通风系统设计等，培养学生的通风系统设计能力。</p>"
+}

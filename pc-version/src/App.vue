@@ -3,13 +3,13 @@
     <!-- 顶部导航栏 -->
     <header class="main-header">
       <div class="header-content">
-        <div class="logo">
+        <div class="logo" @click="goHome">
             刘传濠的个人学习资料系统
           </div>
         <nav class="main-nav">
           <router-link to="/" class="nav-item" active-class="active">首页</router-link>
           <router-link to="/learn" class="nav-item" active-class="active">学习</router-link>
-          <router-link to="/me" class="nav-item" active-class="active">我的</router-link>
+          <!-- <router-link to="/me" class="nav-item" active-class="active">我的</router-link> -->
         </nav>
       </div>
     </header>
@@ -37,6 +37,11 @@ export default {
   name: 'App',
   mounted() {
     console.log('App mounted')
+  },
+  methods: {
+    goHome() {
+      this.$router.push('/')
+    }
   }
 }
 </script>
@@ -47,6 +52,17 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* 使logo可点击 */
+.logo {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: #409eff;
 }
 
 body {
@@ -85,6 +101,8 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  text-align: center;
+  justify-content: center;
 }
 
 .logo img {

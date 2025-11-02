@@ -1,0 +1,75 @@
+{
+  "id": "3_3",
+  "title": "水质工程学",
+  "category": "给排水",
+  "students": 1280,
+  "duration": "28小时",
+  "progress": "35%",
+  "image": "/images/learn/water.jpg",
+  "chapters": [
+    {
+      "title": "第一章 给水处理",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "混凝沉淀技术",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "过滤与消毒",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "深度处理工艺",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 污水处理",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "物理处理技术",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "生化处理原理",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "污泥处理处置",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 水处理厂设计",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "水厂工艺选择",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "处理单元设计",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "水厂平面布置",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解水质工程的基本理论和处理技术，是给排水专业的核心课程。</p><p>内容包括给水处理、污水处理和水处理厂设计等，培养学生解决水质工程实际问题的能力。</p>"
+}

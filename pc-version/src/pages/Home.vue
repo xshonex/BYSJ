@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
-    <!-- 搜索栏 -->
-    <div class="search-section">
+    <!-- 搜索栏已隐藏 -->
+    <!-- <div class="search-section">
       <div class="search-box">
         <input 
           type="text" 
@@ -9,9 +9,9 @@
           v-model="keyword"
           class="search-input"
         >
-        <button class="search-btn" @click="goSearch">搜索</button>
+        <button class="search-btn">搜索</button>
       </div>
-    </div>
+    </div> -->
 
     <!-- 标签页 -->
     <div class="tabs-container">
@@ -26,156 +26,47 @@
         </button>
       </div>
 
-      <!-- 标签内容 -->
+      <!-- 标签内容 - 动态渲染当前专业的内容 -->
       <div class="tab-content">
-        <!-- 建筑设计 -->
-        <div v-show="current === 0" class="tab-pane">
-          <div class="banner-section">
-            <div class="banner-swiper">
+        <div class="tab-pane">
+          <!-- 轮播图区域 -->
+          <div class="banner-swiper">
+            <!-- 轮播图片 -->
+            <div class="swiper-container">
               <img 
-                v-for="(item, index) in swiperList1" 
+                v-for="(item, index) in currentSwiperList" 
                 :key="index"
                 :src="item.image" 
                 :alt="item.text"
                 class="banner-image"
-              >
+                :class="{ active: currentSlideIndex[current] === index }"
+              />
+            </div>
+            <!-- 左右箭头 -->
+            <button class="swiper-prev" @click="prevSlide">&lt;</button>
+            <button class="swiper-next" @click="nextSlide">&gt;</button>
+            <!-- 指示器 -->
+            <div class="swiper-indicators">
+              <span 
+                v-for="(item, index) in currentSwiperList" 
+                :key="index"
+                :class="{ active: currentSlideIndex[current] === index }"
+                @click="currentSlideIndex[current] = index"
+              ></span>
             </div>
           </div>
 
+          <!-- 课程列表区域 -->
           <div class="courses-section">
             <h3 class="section-title">推荐课程</h3>
             <div class="courses-grid">
               <div 
-                v-for="(item, index) in courseList1" 
+                v-for="(item, index) in currentCourseList" 
                 :key="index"
                 class="course-card"
-                @click="goCourse(1, item.id)"
+                @click="goCourse(current + 1, item.id)"
               >
-                <img :src="item.image" :alt="item.title" class="course-image">
-                <h4 class="course-title">{{ item.title }}</h4>
-                <span class="course-tag">{{ item.tag }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 结构设计 -->
-        <div v-show="current === 1" class="tab-pane">
-          <div class="banner-section">
-            <div class="banner-swiper">
-              <img 
-                v-for="(item, index) in swiperList2" 
-                :key="index"
-                :src="item.image" 
-                :alt="item.text"
-                class="banner-image"
-              >
-            </div>
-          </div>
-
-          <div class="courses-section">
-            <h3 class="section-title">推荐课程</h3>
-            <div class="courses-grid">
-              <div 
-                v-for="(item, index) in courseList2" 
-                :key="index"
-                class="course-card"
-                @click="goCourse(2, item.id)"
-              >
-                <img :src="item.image" :alt="item.title" class="course-image">
-                <h4 class="course-title">{{ item.title }}</h4>
-                <span class="course-tag">{{ item.tag }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 给排水设计 -->
-        <div v-show="current === 2" class="tab-pane">
-          <div class="banner-section">
-            <div class="banner-swiper">
-              <img 
-                v-for="(item, index) in swiperList3" 
-                :key="index"
-                :src="item.image" 
-                :alt="item.text"
-                class="banner-image"
-              >
-            </div>
-          </div>
-
-          <div class="courses-section">
-            <h3 class="section-title">推荐课程</h3>
-            <div class="courses-grid">
-              <div 
-                v-for="(item, index) in courseList3" 
-                :key="index"
-                class="course-card"
-                @click="goCourse(3, item.id)"
-              >
-                <img :src="item.image" :alt="item.title" class="course-image">
-                <h4 class="course-title">{{ item.title }}</h4>
-                <span class="course-tag">{{ item.tag }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 暖通设计 -->
-        <div v-show="current === 3" class="tab-pane">
-          <div class="banner-section">
-            <div class="banner-swiper">
-              <img 
-                v-for="(item, index) in swiperList4" 
-                :key="index"
-                :src="item.image" 
-                :alt="item.text"
-                class="banner-image"
-              >
-            </div>
-          </div>
-
-          <div class="courses-section">
-            <h3 class="section-title">推荐课程</h3>
-            <div class="courses-grid">
-              <div 
-                v-for="(item, index) in courseList4" 
-                :key="index"
-                class="course-card"
-                @click="goCourse(4, item.id)"
-              >
-                <img :src="item.image" :alt="item.title" class="course-image">
-                <h4 class="course-title">{{ item.title }}</h4>
-                <span class="course-tag">{{ item.tag }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 电气设计 -->
-        <div v-show="current === 4" class="tab-pane">
-          <div class="banner-section">
-            <div class="banner-swiper">
-              <img 
-                v-for="(item, index) in swiperList5" 
-                :key="index"
-                :src="item.image" 
-                :alt="item.text"
-                class="banner-image"
-              >
-            </div>
-          </div>
-
-          <div class="courses-section">
-            <h3 class="section-title">推荐课程</h3>
-            <div class="courses-grid">
-              <div 
-                v-for="(item, index) in courseList5" 
-                :key="index"
-                class="course-card"
-                @click="goCourse(5, item.id)"
-              >
-                <img :src="item.image" :alt="item.title" class="course-image">
+                <img :src="item.image" :alt="item.title" class="course-image" />
                 <h4 class="course-title">{{ item.title }}</h4>
                 <span class="course-tag">{{ item.tag }}</span>
               </div>
@@ -192,7 +83,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      keyword: '',
+      currentSlideIndex: [0, 0, 0, 0, 0],
       current: 0,
       tabList: [
         { name: '建筑设计' },
@@ -201,90 +92,312 @@ export default {
         { name: '暖通设计' },
         { name: '电气设计' }
       ],
-      // 轮播图数据（使用原始项目图片）
-      swiperList1: [
-        { image: '@static/images/index/建筑设计推广1.jpg', text: '建筑设计推广1' },
-        { image: '@static/images/index/建筑设计推广2.jpg', text: '建筑设计推广2' },
-        { image: '@static/images/index/建筑设计推广3.jpg', text: '建筑设计推广3' }
+      // 使用数组存储所有专业的轮播数据
+      swiperLists: [
+        [
+          { image: '/images/index/建筑设计推广1.jpg', text: '建筑设计推广1' },
+          { image: '/images/index/建筑设计推广2.jpg', text: '建筑设计推广2' },
+          { image: '/images/index/建筑设计推广3.jpg', text: '建筑设计推广3' },
+          { image: '/images/index/建筑设计推广4.jpg', text: '建筑设计推广4' }
+        ],
+        [
+          { image: '/images/index/结构设计推广1.jpg', text: '结构设计推广1' },
+          { image: '/images/index/结构设计推广2.jpg', text: '结构设计推广2' },
+          { image: '/images/index/结构设计推广3.jpg', text: '结构设计推广3' },
+          { image: '/images/index/结构设计推广4.jpg', text: '结构设计推广4' }
+        ],
+        [
+          { image: '/images/index/给排水设计推广1.jpg', text: '给排水设计推广1' },
+          { image: '/images/index/给排水设计推广2.jpg', text: '给排水设计推广2' },
+          { image: '/images/index/给排水设计推广3.jpg', text: '给排水设计推广3' },
+          { image: '/images/index/给排水设计推广4.jpg', text: '给排水设计推广4' }
+        ],
+        [
+          { image: '/images/index/暖通设计推广1.jpg', text: '暖通设计推广1' },
+          { image: '/images/index/暖通设计推广2.jpg', text: '暖通设计推广2' },
+          { image: '/images/index/暖通设计推广3.jpg', text: '暖通设计推广3' },
+          { image: '/images/index/暖通设计推广4.jpg', text: '暖通设计推广4' }
+        ],
+        [
+          { image: '/images/index/电气设计推广1.jpg', text: '电气设计推广1' },
+          { image: '/images/index/电气设计推广2.jpg', text: '电气设计推广2' },
+          { image: '/images/index/电气设计推广3.jpg', text: '电气设计推广3' },
+          { image: '/images/index/电气设计推广4.jpg', text: '电气设计推广4' }
+        ]
       ],
-      swiperList2: [
-        { image: '@static/images/index/结构设计推广1.jpg', text: '结构设计推广1' },
-        { image: '@static/images/index/结构设计推广2.jpg', text: '结构设计推广2' },
-        { image: '@static/images/index/结构设计推广3.jpg', text: '结构设计推广3' }
-      ],
-      swiperList3: [
-        { image: '@static/images/index/给排水设计推广1.jpg', text: '给排水设计推广1' },
-        { image: '@static/images/index/给排水设计推广2.jpg', text: '给排水设计推广2' },
-        { image: '@static/images/index/给排水设计推广3.jpg', text: '给排水设计推广3' }
-      ],
-      swiperList4: [
-        { image: '@static/images/index/暖通设计推广1.jpg', text: '暖通设计推广1' },
-        { image: '@static/images/index/暖通设计推广2.jpg', text: '暖通设计推广2' },
-        { image: '@static/images/index/暖通设计推广3.jpg', text: '暖通设计推广3' }
-      ],
-      swiperList5: [
-        { image: '@static/images/index/电气设计推广1.jpg', text: '电气设计推广1' },
-        { image: '@static/images/index/电气设计推广2.jpg', text: '电气设计推广2' },
-        { image: '@static/images/index/电气设计推广3.jpg', text: '电气设计推广3' }
-      ],
-      // 课程数据（使用原始项目图片）
-      courseList1: [
-        { id: 1, title: '建筑设计从入门到精通', image: '@static/images/index/建筑设计推广1.jpg', tag: '热门课程' },
-        { id: 2, title: '建筑设计基础理论', image: '@static/images/index/建筑设计推广2.jpg', tag: '新课上线' },
-        { id: 3, title: '建筑设计实战案例', image: '@static/images/index/建筑设计推广3.jpg', tag: '实战课程' },
-        { id: 4, title: '建筑设计规范解读', image: '@static/images/index/名师课堂@2x.png', tag: '规范学习' }
-      ],
-      courseList2: [
-        { id: 1, title: '结构设计从入门到精通', image: '@static/images/index/结构设计推广1.jpg', tag: '热门课程' },
-        { id: 2, title: '结构设计基础理论', image: '@static/images/index/结构设计推广2.jpg', tag: '新课上线' },
-        { id: 3, title: '结构设计实战案例', image: '@static/images/index/结构设计推广3.jpg', tag: '实战课程' },
-        { id: 4, title: '结构设计规范解读', image: '@static/images/index/热门课程@2x.png', tag: '规范学习' }
-      ],
-      courseList3: [
-        { id: 1, title: '给排水设计从入门到精通', image: '@static/images/index/给排水设计推广1.jpg', tag: '热门课程' },
-        { id: 2, title: '给排水设计基础理论', image: '@static/images/index/给排水设计推广2.jpg', tag: '新课上线' },
-        { id: 3, title: '给排水设计实战案例', image: '@static/images/index/给排水设计推广3.jpg', tag: '实战课程' },
-        { id: 4, title: '给排水设计规范解读', image: '@static/images/index/特价优惠@2x.png', tag: '规范学习' }
-      ],
-      courseList4: [
-        { id: 1, title: '暖通设计从入门到精通', image: '@static/images/index/暖通设计推广1.jpg', tag: '热门课程' },
-        { id: 2, title: '暖通设计基础理论', image: '@static/images/index/暖通设计推广2.jpg', tag: '新课上线' },
-        { id: 3, title: '暖通设计实战案例', image: '@static/images/index/暖通设计推广3.jpg', tag: '实战课程' },
-        { id: 4, title: '暖通设计规范解读', image: '@static/images/index/最新公告@2x.png', tag: '规范学习' }
-      ],
-      courseList5: [
-        { id: 1, title: '电气设计从入门到精通', image: '@static/images/index/电气设计推广1.jpg', tag: '热门课程' },
-        { id: 2, title: '电气设计基础理论', image: '@static/images/index/电气设计推广2.jpg', tag: '新课上线' },
-        { id: 3, title: '电气设计实战案例', image: '@static/images/index/电气设计推广3.jpg', tag: '实战课程' },
-        { id: 4, title: '电气设计规范解读', image: '@static/images/index/免费体验@2x.png', tag: '规范学习' }
+      swiperTimers: [],
+      // 使用数组存储所有专业的课程数据
+      courseLists: [
+        [
+            { id: 1, title: '建筑设计从入门到精通', image: '/images/index/建筑设计推广1.jpg', tag: '热门课程' },
+            { id: 2, title: '建筑设计原理', image: '/images/index/建筑设计推广2.jpg', tag: '新课上线' },
+            { id: 3, title: '建筑历史与理论', image: '/images/index/建筑设计推广3.jpg', tag: '实战课程' },
+            { id: 4, title: '建筑构造与材料', image: '/images/index/建筑设计推广4.jpg', tag: '规范学习' }
+          ],
+        [
+          { id: 1, title: '混凝土结构设计', image: '/images/index/结构设计推广1.jpg', tag: '热门课程' },
+          { id: 2, title: '钢结构设计', image: '/images/index/结构设计推广2.jpg', tag: '新课上线' },
+          { id: 3, title: '结构力学', image: '/images/index/结构设计推广3.jpg', tag: '实战课程' },
+          { id: 4, title: '地基基础设计', image: '/images/index/结构设计推广4.jpg', tag: '规范学习' }
+        ],
+        [
+          { id: 1, title: '给水工程', image: '/images/index/给排水设计推广1.jpg', tag: '热门课程' },
+          { id: 2, title: '排水工程', image: '/images/index/给排水设计推广2.jpg', tag: '新课上线' },
+          { id: 3, title: '水质工程学', image: '/images/index/给排水设计推广3.jpg', tag: '实战课程' },
+          { id: 4, title: '建筑给排水工程', image: '/images/index/特价优惠@2x.png', tag: '规范学习' }
+        ],
+        [
+          { id: 1, title: '暖通空调原理', image: '/images/index/暖通设计推广1.jpg', tag: '热门课程' },
+          { id: 2, title: '制冷技术', image: '/images/index/暖通设计推广2.jpg', tag: '新课上线' },
+          { id: 3, title: '通风工程', image: '/images/index/暖通设计推广3.jpg', tag: '实战课程' },
+          { id: 4, title: '建筑节能技术', image: '/images/index/最新公告@2x.png', tag: '规范学习' }
+        ],
+        [
+          { id: 1, title: '建筑供配电', image: '/images/index/电气设计推广1.jpg', tag: '热门课程' },
+          { id: 2, title: '建筑照明', image: '/images/index/电气设计推广2.jpg', tag: '新课上线' },
+          { id: 3, title: '建筑智能化', image: '/images/index/电气设计推广3.jpg', tag: '实战课程' },
+          { id: 4, title: '电气安全与节能', image: '/images/index/免费体验@2x.png', tag: '规范学习' }
+        ]
       ]
+    }
+  },
+  computed: {
+    // 计算属性：获取当前专业的轮播数据
+    currentSwiperList() {
+      return this.swiperLists[this.current];
+    },
+    // 计算属性：获取当前专业的课程数据
+    currentCourseList() {
+      return this.courseLists[this.current];
     }
   },
   methods: {
     changeTab(index) {
-      this.current = index
+      this.current = index;
+      this.currentSlideIndex[index] = 0;
+      this.startSwiper();
     },
-    goSearch() {
-      this.$router.push({
-        path: '/search',
-        query: { keyword: this.keyword }
-      })
+    startSwiper() {
+      this.clearSwiperTimers();
+      // 为当前专业创建一个定时器
+      this.swiperTimers.push(setInterval(() => {
+        this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] + 1) % this.currentSwiperList.length;
+      }, 3000));
+    },
+    clearSwiperTimers() {
+      this.swiperTimers.forEach(timer => clearInterval(timer));
+      this.swiperTimers = [];
+    },
+    prevSlide() {
+      this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] - 1 + this.currentSwiperList.length) % this.currentSwiperList.length;
+    },
+    nextSlide() {
+      this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] + 1) % this.currentSwiperList.length;
     },
     goCourse(type, id) {
       this.$router.push({
         path: `/course/${type}_${id}`
-      })
+      });
+    }
+  },
+  mounted() {
+    this.startSwiper();
+  },
+  beforeUnmount() {
+    this.clearSwiperTimers();
+  },
+  watch: {
+    current() {
+      this.startSwiper();
     }
   }
-}
+};
 </script>
 
 <style scoped>
+/* 核心样式 - 论文使用精简版 */
+
+/* 主容器 */
 .home-page {
-  padding: 20px 0;
+  padding: 20px;
 }
 
-/* 搜索栏样式 */
+/* 标签页容器 */
+.tabs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* 标签按钮 */
+.tabs {
+  display: flex;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  flex: 1;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab:hover,
+.tab.active {
+  color: #5074FF;
+}
+
+.tab.active {
+  border-bottom-color: #5074FF;
+  background-color: #fff;
+}
+
+/* 轮播图区域 */
+.banner-swiper {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.swiper-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 轮播图片 */
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.banner-image.active {
+  opacity: 1;
+}
+
+/* 轮播控制按钮 */
+.swiper-prev,
+.swiper-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.swiper-prev {
+  left: 20px;
+}
+
+.swiper-next {
+  right: 20px;
+}
+
+/* 指示器 */
+.swiper-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.swiper-indicators span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-indicators span.active {
+  background: white;
+}
+
+/* 课程区域 */
+.courses-section {
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* 课程卡片 */
+.course-card {
+  background: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.course-title {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.course-tag {
+  display: inline-block;
+  margin: 0 16px 16px 16px;
+  padding: 4px 12px;
+  background-color: #FFEEE5;
+  color: #FF5A00;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+
+/* 搜索栏样式 
 .search-section {
   margin-bottom: 30px;
 }
@@ -319,130 +432,6 @@ export default {
 .search-btn:hover {
   background-color: #405ecb;
 }
+*/
 
-/* 标签页样式 */
-.tabs-container {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.tabs {
-  display: flex;
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.tab {
-  flex: 1;
-  padding: 16px 20px;
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-bottom: 2px solid transparent;
-}
-
-.tab:hover {
-  color: #5074FF;
-}
-
-.tab.active {
-  color: #5074FF;
-  border-bottom-color: #5074FF;
-  background-color: #fff;
-}
-
-/* 轮播图样式 */
-.banner-section {
-  padding: 20px;
-}
-
-.banner-swiper {
-  position: relative;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.banner-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 课程列表样式 */
-.courses-section {
-  padding: 20px;
-}
-
-.section-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.courses-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.course-card {
-  background: #fafafa;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.course-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.course-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.course-title {
-  padding: 16px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.course-tag {
-  display: inline-block;
-  margin: 0 16px 16px 16px;
-  padding: 4px 12px;
-  background-color: #FFEEE5;
-  color: #FF5A00;
-  border-radius: 16px;
-  font-size: 14px;
-}
-
-/* 响应式调整 */
-@media (max-width: 768px) {
-  .courses-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-  }
-  
-  .banner-swiper {
-    height: 200px;
-  }
-  
-  .course-image {
-    height: 140px;
-  }
-}
 </style>

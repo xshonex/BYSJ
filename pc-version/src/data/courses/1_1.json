@@ -1,0 +1,74 @@
+{
+  "id": "1_1",
+  "title": "建筑设计从入门到精通",
+  "category": "建筑设计",
+  "students": 1234,
+  "progress": "30%",
+  "image": "/src/assets/images/learn/建筑设计课程封面.png",
+  "chapters": [
+    {
+      "title": "第一章 建筑设计基础",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "建筑设计概述",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "建筑设计基本原则",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "建筑设计规范与标准",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 建筑空间构成",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "空间概念与类型",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "空间组织原则",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "空间尺度与人体工程学",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 建筑造型基础",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "形态构成原理",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "比例与尺度",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "材质与色彩应用",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程是建筑专业的基础课程，系统介绍建筑设计的基本理论和方法。</p><p>内容包括设计方法论、建筑空间构成和建筑造型基础等核心知识点，培养学生的设计思维和表达能力。</p>"
+}

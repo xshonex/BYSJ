@@ -1,0 +1,75 @@
+{
+  "id": "4_1",
+  "title": "暖通空调原理",
+  "category": "暖通",
+  "students": 1560,
+  "duration": "28小时",
+  "progress": "45%",
+  "image": "/images/learn/hvac.jpg",
+  "chapters": [
+    {
+      "title": "第一章 空调基础知识",
+      "expanded": true,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "湿空气性质",
+          "isActive": true
+        },
+        {
+          "type": "视频",
+          "title": "空调设计标准",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "空调负荷计算",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第二章 空调系统分类",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "集中式空调系统",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "分散式空调系统",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "半集中式空调系统",
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "title": "第三章 空调设备",
+      "expanded": false,
+      "sections": [
+        {
+          "type": "视频",
+          "title": "空气处理设备",
+          "isActive": false
+        },
+        {
+          "type": "视频",
+          "title": "制冷设备原理",
+          "isActive": false
+        },
+        {
+          "type": "文档",
+          "title": "空调末端设备",
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "intro": "<p>本课程系统讲解暖通空调的基本原理和技术，是暖通专业的核心基础课程。</p><p>内容包括空调基础知识、空调系统分类和空调设备等，培养学生的暖通空调专业素养。</p>"
+}
