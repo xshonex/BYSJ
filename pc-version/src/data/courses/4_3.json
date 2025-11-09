@@ -2,10 +2,6 @@
   "id": "4_3",
   "title": "通风工程",
   "category": "暖通",
-  "students": 1350,
-  "duration": "25小时",
-  "progress": "38%",
-  "image": "/images/learn/hvac.jpg",
   "chapters": [
     {
       "title": "第一章 通风基础",

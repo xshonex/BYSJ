@@ -2,10 +2,6 @@
   "id": "2_1",
   "title": "混凝土结构设计",
   "category": "结构",
-  "students": 1650,
-  "duration": "28小时",
-  "progress": "40%",
-  "image": "/images/learn/structure.jpg",
   "chapters": [
     {
       "title": "第一章 混凝土结构基本原理",

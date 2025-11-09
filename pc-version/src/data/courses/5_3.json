@@ -1,11 +1,7 @@
 {
   "id": "5_3",
   "title": "建筑智能化",
-  "category": "电气",
-  "students": 1580,
-  "duration": "27小时",
-  "progress": "43%",
-  "image": "/images/learn/electrical.jpg",
+  "category": "电气设计",
   "chapters": [
     {
       "title": "第一章 智能化基础",

@@ -2,10 +2,6 @@
   "id": "1_2",
   "title": "建筑设计原理",
   "category": "建筑",
-  "students": 1450,
-  "duration": "22小时",
-  "progress": "50%",
-  "image": "/images/learn/arch.jpg",
   "chapters": [
     {
       "title": "第一章 居住建筑设计",

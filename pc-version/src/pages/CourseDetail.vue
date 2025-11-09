@@ -12,29 +12,14 @@
       <div class="course-header">
         <div class="course-main-info">
           <div class="course-cover">
-            <img src="D:/sync/IT/_Project/ziyuan/static/images/index/建筑设计推广1.jpg" :alt="courseDetail.title" class="cover-image">
+            <img src="@static/images/index/建筑设计推广1.jpg" :alt="courseDetail.title" class="cover-image">
           </div>
           <div class="course-info">
             <h4 class="course-title">{{ courseDetail.title }}</h4>
             <div class="course-meta">
               <span class="category">{{ courseDetail.category }}</span>
-              <!-- <span class="students">{{ courseDetail.students }}人学习</span> -->
-              <!-- <span class="duration">{{ courseDetail.duration }}</span> -->
             </div>
-            <!--
-            <div class="course-progress">
-              <span class="progress-text">学习进度：{{ courseDetail.progress }}</span>
-              <div class="progress-bar">
-                <div class="progress-fill" :style="{ width: courseDetail.progress }"></div>
-              </div>
-            </div>
-            <div class="course-actions">
-              <button class="btn btn-primary btn-lg" @click="continueLearning">继续学习</button>
-              <button class="btn btn-outline" @click="addToFavorite">
-                {{ isFavorite ? '已收藏' : '收藏' }}
-              </button>
-            </div>
-            -->
+
           </div>
         </div>
       </div>

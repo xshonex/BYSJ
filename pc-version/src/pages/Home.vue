@@ -1,17 +1,5 @@
 <template>
   <div class="home-page">
-    <!-- 搜索栏已隐藏 -->
-    <!-- <div class="search-section">
-      <div class="search-box">
-        <input 
-          type="text" 
-          placeholder="建筑设计公开课" 
-          v-model="keyword"
-          class="search-input"
-        >
-        <button class="search-btn">搜索</button>
-      </div>
-    </div> -->
 
     <!-- 标签页 -->
     <div class="tabs-container">
@@ -144,19 +132,19 @@ export default {
           { id: 1, title: '给水工程', image: '/images/index/给排水设计推广1.jpg', tag: '热门课程' },
           { id: 2, title: '排水工程', image: '/images/index/给排水设计推广2.jpg', tag: '新课上线' },
           { id: 3, title: '水质工程学', image: '/images/index/给排水设计推广3.jpg', tag: '实战课程' },
-          { id: 4, title: '建筑给排水工程', image: '/images/index/特价优惠@2x.png', tag: '规范学习' }
+          { id: 4, title: '建筑给排水工程', image: '/images/index/给排水设计推广4.jpg', tag: '规范学习' }
         ],
         [
           { id: 1, title: '暖通空调原理', image: '/images/index/暖通设计推广1.jpg', tag: '热门课程' },
           { id: 2, title: '制冷技术', image: '/images/index/暖通设计推广2.jpg', tag: '新课上线' },
           { id: 3, title: '通风工程', image: '/images/index/暖通设计推广3.jpg', tag: '实战课程' },
-          { id: 4, title: '建筑节能技术', image: '/images/index/最新公告@2x.png', tag: '规范学习' }
+          { id: 4, title: '建筑节能技术', image: '/images/index/暖通设计推广4.jpg', tag: '规范学习' }
         ],
         [
           { id: 1, title: '建筑供配电', image: '/images/index/电气设计推广1.jpg', tag: '热门课程' },
           { id: 2, title: '建筑照明', image: '/images/index/电气设计推广2.jpg', tag: '新课上线' },
           { id: 3, title: '建筑智能化', image: '/images/index/电气设计推广3.jpg', tag: '实战课程' },
-          { id: 4, title: '电气安全与节能', image: '/images/index/免费体验@2x.png', tag: '规范学习' }
+          { id: 4, title: '电气安全与节能', image: '/images/index/电气设计推广4.jpg', tag: '规范学习' }
         ]
       ]
     }
@@ -215,7 +203,6 @@ export default {
 </script>
 
 <style scoped>
-/* 核心样式 - 论文使用精简版 */
 
 /* 主容器 */
 .home-page {
@@ -397,41 +384,6 @@ export default {
 }
 
 
-/* 搜索栏样式 
-.search-section {
-  margin-bottom: 30px;
-}
 
-.search-box {
-  display: flex;
-  max-width: 600px;
-  margin: 0 auto;
-  height: 44px;
-}
-
-.search-input {
-  flex: 1;
-  padding: 0 16px;
-  border: 2px solid #5074FF;
-  border-right: none;
-  border-radius: 4px 0 0 4px;
-  font-size: 16px;
-}
-
-.search-btn {
-  padding: 0 24px;
-  background-color: #5074FF;
-  color: #fff;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.search-btn:hover {
-  background-color: #405ecb;
-}
-*/
 
 </style>

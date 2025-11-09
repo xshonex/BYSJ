@@ -1,11 +1,7 @@
 {
   "id": "4_2",
   "title": "制冷技术",
-  "category": "暖通",
-  "students": 1420,
-  "duration": "26小时",
-  "progress": "40%",
-  "image": "/images/learn/hvac.jpg",
+  "category": "暖通设计",
   "chapters": [
     {
       "title": "第一章 制冷原理",

@@ -2,10 +2,6 @@
   "id": "3_1",
   "title": "给水工程",
   "category": "给排水",
-  "students": 1480,
-  "duration": "26小时",
-  "progress": "45%",
-  "image": "/images/learn/water.jpg",
   "chapters": [
     {
       "title": "第一章 给水系统概述",

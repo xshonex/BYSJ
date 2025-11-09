@@ -1,11 +1,7 @@
 {
   "id": "2_4",
   "title": "地基基础设计",
-  "category": "结构",
-  "students": 1520,
-  "duration": "24小时",
-  "progress": "30%",
-  "image": "/images/learn/structure.jpg",
+  "category": "结构设计",
   "chapters": [
     {
       "title": "第一章 土力学基础",

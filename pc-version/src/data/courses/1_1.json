@@ -2,9 +2,6 @@
   "id": "1_1",
   "title": "建筑设计从入门到精通",
   "category": "建筑设计",
-  "students": 1234,
-  "progress": "30%",
-  "image": "/src/assets/images/learn/建筑设计课程封面.png",
   "chapters": [
     {
       "title": "第一章 建筑设计基础",

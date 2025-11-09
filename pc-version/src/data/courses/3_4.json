@@ -2,10 +2,6 @@
   "id": "3_4",
   "title": "建筑给排水工程",
   "category": "给排水",
-  "students": 1450,
-  "duration": "22小时",
-  "progress": "42%",
-  "image": "/images/learn/water.jpg",
   "chapters": [
     {
       "title": "第一章 建筑给水系统",

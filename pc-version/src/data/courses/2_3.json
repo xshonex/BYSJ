@@ -2,10 +2,6 @@
   "id": "2_3",
   "title": "结构力学",
   "category": "结构",
-  "students": 1780,
-  "duration": "30小时",
-  "progress": "25%",
-  "image": "/images/learn/structure.jpg",
   "chapters": [
     {
       "title": "第一章 结构几何组成分析",

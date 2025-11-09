@@ -1,11 +1,7 @@
 {
   "id": "4_4",
   "title": "建筑节能技术",
-  "category": "暖通",
-  "students": 1580,
-  "duration": "27小时",
-  "progress": "42%",
-  "image": "/images/learn/hvac.jpg",
+  "category": "暖通设计",
   "chapters": [
     {
       "title": "第一章 建筑节能基础",

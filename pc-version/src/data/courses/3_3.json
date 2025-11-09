@@ -2,10 +2,6 @@
   "id": "3_3",
   "title": "水质工程学",
   "category": "给排水",
-  "students": 1280,
-  "duration": "28小时",
-  "progress": "35%",
-  "image": "/images/learn/water.jpg",
   "chapters": [
     {
       "title": "第一章 给水处理",

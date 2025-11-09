@@ -14,18 +14,8 @@
         </div>
         <div class="course-info">
           <h3 class="course-title">{{ item.title }}</h3>
-          <div class="course-meta">
-            <span class="progress">学习进度 {{ item.progress }}</span>
-          </div>
         </div>
       </div>
-    </div>
-    
-    <!-- 空状态 -->
-    <div v-if="courseList.length === 0" class="empty-state">
-      <img src="@static/images/learn/空状态.png" alt="暂无课程" class="empty-image">
-      <p class="empty-text">暂无课程</p>
-      <button class="btn btn-primary">立即购买</button>
     </div>
   </div>
 </template>
@@ -39,32 +29,27 @@ export default {
         {
           id: '1_1',
           title: '建筑设计从入门到精通',
-          image: '@static/images/index/建筑设计推广1.jpg',
-          progress: '30%'
+          image: '/images/index/建筑设计推广1.jpg',
         },
         {
           id: '2_1',
           title: '结构设计从入门到精通',
-          image: '@static/images/index/结构设计推广1.jpg',
-          progress: '30%'
+          image: '/images/index/结构设计推广1.jpg',
         },
         {
           id: '3_1',
           title: '给排水设计从入门到精通',
-          image: '@static/images/index/给排水设计推广1.jpg',
-          progress: '30%'
+          image: '/images/index/给排水设计推广1.jpg',
         },
         {
           id: '4_1',
           title: '暖通设计从入门到精通',
-          image: '@static/images/index/暖通设计推广1.jpg',
-          progress: '30%'
+          image: '/images/index/暖通设计推广1.jpg',
         },
         {
           id: '5_1',
           title: '电气设计从入门到精通',
-          image: '@static/images/index/电气设计推广1.jpg',
-          progress: '30%'
+          image: '/images/index/电气设计推广1.jpg',
         }
       ]
     }

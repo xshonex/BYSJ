@@ -1,11 +1,7 @@
 {
   "id": "2_2",
   "title": "钢结构设计",
-  "category": "结构",
-  "students": 1420,
-  "duration": "26小时",
-  "progress": "35%",
-  "image": "/images/learn/structure.jpg",
+  "category": "结构设计",
   "chapters": [
     {
       "title": "第一章 钢结构基本原理",

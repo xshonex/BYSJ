@@ -2,10 +2,6 @@
   "id": "5_1",
   "title": "建筑供配电",
   "category": "电气",
-  "students": 1620,
-  "duration": "28小时",
-  "progress": "45%",
-  "image": "/images/learn/electrical.jpg",
   "chapters": [
     {
       "title": "第一章 供配电基础",

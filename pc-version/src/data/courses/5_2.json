@@ -2,10 +2,6 @@
   "id": "5_2",
   "title": "建筑照明",
   "category": "电气",
-  "students": 1450,
-  "duration": "25小时",
-  "progress": "42%",
-  "image": "/images/learn/electrical.jpg",
   "chapters": [
     {
       "title": "第一章 照明基础",

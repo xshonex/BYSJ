@@ -1,11 +1,7 @@
 {
   "id": "5_4",
   "title": "电气安全与节能",
-  "category": "电气",
-  "students": 1480,
-  "duration": "26小时",
-  "progress": "41%",
-  "image": "/images/learn/electrical.jpg",
+  "category": "电气设计",
   "chapters": [
     {
       "title": "第一章 电气安全基础",

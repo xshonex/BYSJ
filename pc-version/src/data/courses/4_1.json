@@ -2,10 +2,6 @@
   "id": "4_1",
   "title": "暖通空调原理",
   "category": "暖通",
-  "students": 1560,
-  "duration": "28小时",
-  "progress": "45%",
-  "image": "/images/learn/hvac.jpg",
   "chapters": [
     {
       "title": "第一章 空调基础知识",
