@@ -1,7 +1,9 @@
 {
   "id": "3_1",
   "title": "给水工程",
-  "category": "给排水",
+  "category": "给排水设计",
+  "image": "/images/index/给排水设计推广1.jpg",
+  "tag": "热门课程",
   "chapters": [
     {
       "title": "第一章 给水系统概述",

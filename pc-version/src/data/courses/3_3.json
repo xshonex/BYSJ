@@ -1,7 +1,9 @@
 {
   "id": "3_3",
   "title": "水质工程学",
-  "category": "给排水",
+  "category": "给排水设计",
+  "image": "/images/index/给排水设计推广3.jpg",
+  "tag": "实战课程",
   "chapters": [
     {
       "title": "第一章 给水处理",

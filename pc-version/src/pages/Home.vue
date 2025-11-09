@@ -67,6 +67,28 @@
 </template>
 
 <script>
+// 静态导入所有课程JSON文件
+import course1_1 from '../data/courses/1_1.json';
+import course1_2 from '../data/courses/1_2.json';
+import course1_3 from '../data/courses/1_3.json';
+import course1_4 from '../data/courses/1_4.json';
+import course2_1 from '../data/courses/2_1.json';
+import course2_2 from '../data/courses/2_2.json';
+import course2_3 from '../data/courses/2_3.json';
+import course2_4 from '../data/courses/2_4.json';
+import course3_1 from '../data/courses/3_1.json';
+import course3_2 from '../data/courses/3_2.json';
+import course3_3 from '../data/courses/3_3.json';
+import course3_4 from '../data/courses/3_4.json';
+import course4_1 from '../data/courses/4_1.json';
+import course4_2 from '../data/courses/4_2.json';
+import course4_3 from '../data/courses/4_3.json';
+import course4_4 from '../data/courses/4_4.json';
+import course5_1 from '../data/courses/5_1.json';
+import course5_2 from '../data/courses/5_2.json';
+import course5_3 from '../data/courses/5_3.json';
+import course5_4 from '../data/courses/5_4.json';
+
 export default {
   name: 'Home',
   data() {
@@ -117,34 +139,34 @@ export default {
       // 使用数组存储所有专业的课程数据
       courseLists: [
         [
-            { id: 1, title: '建筑设计从入门到精通', image: '/images/index/建筑设计推广1.jpg', tag: '热门课程' },
-            { id: 2, title: '建筑设计原理', image: '/images/index/建筑设计推广2.jpg', tag: '新课上线' },
-            { id: 3, title: '建筑历史与理论', image: '/images/index/建筑设计推广3.jpg', tag: '实战课程' },
-            { id: 4, title: '建筑构造与材料', image: '/images/index/建筑设计推广4.jpg', tag: '规范学习' }
+            { id: 1, title: '建筑设计从入门到精通' },
+            { id: 2, title: '建筑设计原理' },
+            { id: 3, title: '建筑历史与理论' },
+            { id: 4, title: '建筑构造与材料' }
           ],
         [
-          { id: 1, title: '混凝土结构设计', image: '/images/index/结构设计推广1.jpg', tag: '热门课程' },
-          { id: 2, title: '钢结构设计', image: '/images/index/结构设计推广2.jpg', tag: '新课上线' },
-          { id: 3, title: '结构力学', image: '/images/index/结构设计推广3.jpg', tag: '实战课程' },
-          { id: 4, title: '地基基础设计', image: '/images/index/结构设计推广4.jpg', tag: '规范学习' }
+          { id: 1, title: '钢结构设计' },
+          { id: 2, title: '混凝土结构设计' },
+          { id: 3, title: '结构力学' },
+          { id: 4, title: '地基基础设计' }
         ],
         [
-          { id: 1, title: '给水工程', image: '/images/index/给排水设计推广1.jpg', tag: '热门课程' },
-          { id: 2, title: '排水工程', image: '/images/index/给排水设计推广2.jpg', tag: '新课上线' },
-          { id: 3, title: '水质工程学', image: '/images/index/给排水设计推广3.jpg', tag: '实战课程' },
-          { id: 4, title: '建筑给排水工程', image: '/images/index/给排水设计推广4.jpg', tag: '规范学习' }
+          { id: 1, title: '给水工程' },
+          { id: 2, title: '排水工程' },
+          { id: 3, title: '水质工程学' },
+          { id: 4, title: '建筑给排水工程' }
         ],
         [
-          { id: 1, title: '暖通空调原理', image: '/images/index/暖通设计推广1.jpg', tag: '热门课程' },
-          { id: 2, title: '制冷技术', image: '/images/index/暖通设计推广2.jpg', tag: '新课上线' },
-          { id: 3, title: '通风工程', image: '/images/index/暖通设计推广3.jpg', tag: '实战课程' },
-          { id: 4, title: '建筑节能技术', image: '/images/index/暖通设计推广4.jpg', tag: '规范学习' }
+          { id: 1, title: '暖通空调原理' },
+          { id: 2, title: '制冷技术' },
+          { id: 3, title: '通风工程' },
+          { id: 4, title: '建筑节能技术' }
         ],
         [
-          { id: 1, title: '建筑供配电', image: '/images/index/电气设计推广1.jpg', tag: '热门课程' },
-          { id: 2, title: '建筑照明', image: '/images/index/电气设计推广2.jpg', tag: '新课上线' },
-          { id: 3, title: '建筑智能化', image: '/images/index/电气设计推广3.jpg', tag: '实战课程' },
-          { id: 4, title: '电气安全与节能', image: '/images/index/电气设计推广4.jpg', tag: '规范学习' }
+          { id: 1, title: '建筑供配电' },
+          { id: 2, title: '建筑照明' },
+          { id: 3, title: '建筑智能化' },
+          { id: 4, title: '电气安全与节能' }
         ]
       ]
     }
@@ -186,9 +208,54 @@ export default {
       this.$router.push({
         path: `/course/${type}_${id}`
       });
+    },
+    // 加载课程数据，从静态导入的JSON文件中获取image和tag
+    loadCourseData() {
+      // 创建课程数据映射
+      const courseDataMap = {
+        '1_1': course1_1,
+        '1_2': course1_2,
+        '1_3': course1_3,
+        '1_4': course1_4,
+        '2_1': course2_1,
+        '2_2': course2_2,
+        '2_3': course2_3,
+        '2_4': course2_4,
+        '3_1': course3_1,
+        '3_2': course3_2,
+        '3_3': course3_3,
+        '3_4': course3_4,
+        '4_1': course4_1,
+        '4_2': course4_2,
+        '4_3': course4_3,
+        '4_4': course4_4,
+        '5_1': course5_1,
+        '5_2': course5_2,
+        '5_3': course5_3,
+        '5_4': course5_4
+      };
+      
+      // 遍历所有课程类型
+      for (let typeIndex = 0; typeIndex < this.courseLists.length; typeIndex++) {
+        const courseType = typeIndex + 1; // 类型编号从1开始
+        const courseList = this.courseLists[typeIndex];
+        
+        // 遍历当前类型的所有课程
+        for (let courseIndex = 0; courseIndex < courseList.length; courseIndex++) {
+          const courseId = courseList[courseIndex].id;
+          const courseKey = `${courseType}_${courseId}`;
+          
+          if (courseDataMap[courseKey]) {
+            // 合并image和tag字段到courseLists
+            this.courseLists[typeIndex][courseIndex].image = courseDataMap[courseKey].image;
+            this.courseLists[typeIndex][courseIndex].tag = courseDataMap[courseKey].tag;
+          }
+        }
+      }
     }
   },
   mounted() {
+    this.loadCourseData();
     this.startSwiper();
   },
   beforeUnmount() {

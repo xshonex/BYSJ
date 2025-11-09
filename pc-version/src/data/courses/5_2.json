@@ -1,7 +1,9 @@
 {
   "id": "5_2",
   "title": "建筑照明",
-  "category": "电气",
+  "category": "电气设计",
+  "image": "/images/index/电气设计推广2.jpg",
+  "tag": "新课上线",
   "chapters": [
     {
       "title": "第一章 照明基础",

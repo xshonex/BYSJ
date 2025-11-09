@@ -1,7 +1,9 @@
 {
   "id": "3_4",
   "title": "建筑给排水工程",
-  "category": "给排水",
+  "category": "给排水设计",
+  "image": "/images/index/给排水设计推广4.jpg",
+  "tag": "规范学习",
   "chapters": [
     {
       "title": "第一章 建筑给水系统",

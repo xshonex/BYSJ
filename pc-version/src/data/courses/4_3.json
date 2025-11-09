@@ -1,7 +1,9 @@
 {
   "id": "4_3",
   "title": "通风工程",
-  "category": "暖通",
+  "category": "暖通设计",
+  "image": "/images/index/暖通设计推广3.jpg",
+  "tag": "实战课程",
   "chapters": [
     {
       "title": "第一章 通风基础",

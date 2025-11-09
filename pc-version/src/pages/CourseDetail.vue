@@ -12,15 +12,27 @@
       <div class="course-header">
         <div class="course-main-info">
           <div class="course-cover">
-            <img src="@static/images/index/建筑设计推广1.jpg" :alt="courseDetail.title" class="cover-image">
+            <img :src="'/images/index/' + (courseDetail.category === '建筑设计' ? '建筑设计' : 
+                                     courseDetail.category === '结构设计' ? '结构设计' : 
+                                     courseDetail.category === '给排水设计' ? '给排水设计' : 
+                                     courseDetail.category === '暖通设计' ? '暖通设计' : 
+                                     '电气设计') + '推广1.jpg'" 
+                 :alt="courseDetail.title" class="cover-image">
           </div>
           <div class="course-info">
-            <h4 class="course-title">{{ courseDetail.title }}</h4>
-            <div class="course-meta">
-              <span class="category">{{ courseDetail.category }}</span>
-            </div>
-
+          <h4 class="course-title">{{ courseDetail.title }}</h4>
+          <div class="course-meta">
+            <span class="category">{{ courseDetail.category }}</span>
           </div>
+          <div class="course-actions">
+            <button 
+              class="btn btn-outline" 
+              @click="addToFavorite"
+            >
+              <span>{{ isFavorite ? '已收藏' : '收藏' }}</span>
+            </button>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -146,6 +158,43 @@ export default {
     }
   },
   methods: {
+    // 处理页面可见性变化
+    handleVisibilityChange() {
+      if (!document.hidden && this.courseDetail) {
+        // 页面重新可见时，更新收藏状态
+        this.updateFavoriteStatus()
+      }
+    },
+    // 更新收藏状态
+    updateFavoriteStatus() {
+      const favorites = JSON.parse(localStorage.getItem('favoriteCourses') || '[]')
+      this.isFavorite = favorites.some(course => course.id === this.courseDetail.id)
+    },
+    // 添加/取消收藏
+    addToFavorite() {
+      let favorites = JSON.parse(localStorage.getItem('favoriteCourses') || '[]')
+      
+      if (!this.isFavorite) {
+        // 添加收藏
+        const courseToAdd = {
+          id: this.courseDetail.id,
+          title: this.courseDetail.title,
+          image: '/images/index/' + this.courseDetail.title.replace(/[^\u4e00-\u9fa5]/g, '') + '推广1.jpg'
+        }
+        // 检查是否已存在
+        const exists = favorites.some(course => course.id === courseToAdd.id)
+        if (!exists) {
+          favorites.push(courseToAdd)
+          this.isFavorite = true
+        }
+      } else {
+        // 取消收藏
+        favorites = favorites.filter(course => course.id !== this.courseDetail.id)
+        this.isFavorite = false
+      }
+      
+      localStorage.setItem('favoriteCourses', JSON.stringify(favorites))
+    },
     toggleChapter(index) {
       this.courseDetail.chapters[index].expanded = !this.courseDetail.chapters[index].expanded
     },
@@ -159,27 +208,6 @@ export default {
       // 设置新的活跃状态
       this.courseDetail.chapters[chapterIndex].sections[sectionIndex].isActive = true
     },
-    continueLearning() {
-      // 找到当前活跃的章节和小节
-      let chapterIndex = 0
-      let sectionIndex = 0
-      
-      for (let i = 0; i < this.courseDetail.chapters.length; i++) {
-        for (let j = 0; j < this.courseDetail.chapters[i].sections.length; j++) {
-          if (this.courseDetail.chapters[i].sections[j].isActive) {
-            chapterIndex = i
-            sectionIndex = j
-            break
-          }
-        }
-      }
-      
-      this.goToSection(chapterIndex, sectionIndex)
-      console.log('继续学习', chapterIndex, sectionIndex)
-    },
-    addToFavorite() {
-      this.isFavorite = !this.isFavorite
-    },
 
   },
   mounted() {
@@ -190,6 +218,15 @@ export default {
     // 直接加载默认课程，不再显示警告提示
     this.courseDetail = courseDataMap[courseId] || courseDataMap['1_1']
     console.log('课程数据加载成功，当前课程ID:', courseId)
+    
+    // 初始化收藏状态
+    this.updateFavoriteStatus()
+    
+    // 监听页面可见性变化，确保与Learn页面的收藏状态同步
+    document.addEventListener('visibilitychange', this.handleVisibilityChange)
+  },
+  beforeDestroy() {
+    document.removeEventListener('visibilitychange', this.handleVisibilityChange)
   }
 }
 </script>

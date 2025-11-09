@@ -1,7 +1,9 @@
 {
   "id": "2_3",
   "title": "结构力学",
-  "category": "结构",
+  "category": "结构设计",
+  "image": "/images/index/结构设计推广3.jpg",
+  "tag": "实战课程",
   "chapters": [
     {
       "title": "第一章 结构几何组成分析",
