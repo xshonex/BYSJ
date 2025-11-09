@@ -4,7 +4,7 @@
     <header class="main-header">
       <div class="header-content">
         <div class="logo" @click="goHome">
-            刘传濠的个人学习资料系统
+            刘传濠的个人学习系统
           </div>
         <nav class="main-nav">
           <router-link to="/" class="nav-item" active-class="active">首页</router-link>
@@ -23,12 +23,6 @@
       </router-view>
     </main>
 
-    <!-- 底部页脚 -->
-    <footer class="main-footer">
-      <div class="footer-content">
-        <p>© 2025 刘传濠的个人学习资料系统</p>
-      </div>
-    </footer>
   </div>
 </template>
 

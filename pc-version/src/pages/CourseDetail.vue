@@ -12,11 +12,7 @@
       <div class="course-header">
         <div class="course-main-info">
           <div class="course-cover">
-            <img :src="'/images/index/' + (courseDetail.category === '建筑设计' ? '建筑设计' : 
-                                     courseDetail.category === '结构设计' ? '结构设计' : 
-                                     courseDetail.category === '给排水设计' ? '给排水设计' : 
-                                     courseDetail.category === '暖通设计' ? '暖通设计' : 
-                                     '电气设计') + '推广1.jpg'" 
+            <img :src="getCourseImageUrl()" 
                  :alt="courseDetail.title" class="cover-image">
           </div>
           <div class="course-info">
@@ -158,6 +154,15 @@ export default {
     }
   },
   methods: {
+    // 获取课程图片URL
+    getCourseImageUrl() {
+      const validCategories = ['建筑设计', '结构设计', '给排水设计', '暖通设计']
+      const category = validCategories.includes(this.courseDetail.category) 
+        ? this.courseDetail.category 
+        : '电气设计'
+      return `/images/index/${category}推广1.jpg`
+    },
+    
     // 处理页面可见性变化
     handleVisibilityChange() {
       if (!document.hidden && this.courseDetail) {
@@ -314,32 +319,6 @@ export default {
   color: #666;
 }
 
-.course-progress {
-  margin-bottom: 30px;
-}
-
-.progress-text {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #333;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background-color: #f0f0f0;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  height: 100%;
-  background-color: #5074FF;
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
 .course-actions {
   display: flex;
   gap: 20px;
@@ -353,20 +332,6 @@ export default {
   transition: all 0.3s ease;
   border: none;
   outline: none;
-}
-
-.btn-primary {
-  background-color: #5074FF;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #405ecb;
-}
-
-.btn-lg {
-  padding: 16px 40px;
-  font-size: 18px;
 }
 
 .btn-outline {
@@ -512,22 +477,6 @@ export default {
 .section-title {
   font-size: 16px;
   color: #333;
-}
-
-
-
-.section-duration {
-  font-size: 14px;
-  color: #666;
-}
-
-.section-status {
-  font-size: 14px;
-  color: #999;
-}
-
-.section-status.active {
-  color: #5074FF;
 }
 
 /* 课程介绍 */

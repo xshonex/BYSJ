@@ -69,10 +69,10 @@ export default {
       // 定义专业关键词和对应的推广图片类型
       const courseTypeMap = [
         { keywords: ['建筑设计'], type: '建筑设计' },
-        { keywords: ['结构设计', '混凝土', '钢结构'], type: '结构设计' },
-        { keywords: ['给排水', '给水', '排水'], type: '给排水设计' },
-        { keywords: ['暖通', '空调', '通风'], type: '暖通设计' },
-        { keywords: ['电气', '照明'], type: '电气设计' }
+        { keywords: ['力学', '混凝土', '钢结构', '地基'], type: '结构设计' },
+        { keywords: ['给排水', '给水', '排水', '水质'], type: '给排水设计' },
+        { keywords: ['暖通', '空调', '通风', '制冷', '建筑节能'], type: '暖通设计' },
+        { keywords: ['供配电', '照明', '智能化', '电气'], type: '电气设计' }
       ];
       
       // 查找匹配的专业类型
@@ -214,24 +214,6 @@ export default {
 .empty-text {
   font-size: 16px;
   color: #999;
-  margin-bottom: 20px;
-}
-
-.course-meta {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.progress {
-  font-size: 16px;
-  color: #5074FF;
-  font-weight: 500;
-}
-
-.empty-image {
-  width: 200px;
-  height: 200px;
   margin-bottom: 20px;
 }
 
