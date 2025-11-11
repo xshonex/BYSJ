@@ -1,8 +1,52 @@
 <template>
   <div class="home-page">
 
+    <!-- 搜索栏 -->
+    <div class="search-section">
+      <div class="search-box">
+        <input 
+          type="text" 
+          placeholder="建筑设计从入门到精通" 
+          v-model="keyword"
+          class="search-input"
+          @keyup.enter="searchCourses"
+        >
+        <select v-model="selectedMajor" class="major-select">
+          <option value="0">全部专业</option>
+          <option value="1">建筑</option>
+          <option value="2">结构</option>
+          <option value="3">给排水</option>
+          <option value="4">暖通</option>
+          <option value="5">电气</option>
+        </select>
+        <button class="search-btn" @click="searchCourses">搜索</button>
+      </div>
+    </div>
+    
+    <!-- 搜索结果区域 -->
+    <div v-if="showSearchResults && searchResults.length > 0" class="search-results">
+      <h3 class="section-title">搜索结果</h3>
+      <div class="courses-grid">
+        <div 
+          v-for="(item, index) in searchResults" 
+          :key="index"
+          class="course-card"
+          @click="goCourse(item.type, item.id)"
+        >
+          <img :src="item.image" :alt="item.title" class="course-image" />
+          <h4 class="course-title">{{ item.title }}</h4>
+          <span class="course-tag">{{ item.tag }}</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 无搜索结果提示 -->
+    <div v-else-if="showSearchResults && searchResults.length === 0" class="no-results">
+      <p>未找到相关课程，请尝试其他关键词</p>
+    </div>
+
     <!-- 标签页 -->
-    <div class="tabs-container">
+    <div v-if="!showSearchResults" class="tabs-container">
       <div class="tabs">
         <button 
           v-for="(tab, index) in tabList" 
@@ -95,6 +139,10 @@ export default {
     return {
       currentSlideIndex: [0, 0, 0, 0, 0],
       current: 0,
+      keyword: '',
+      selectedMajor: '0', // 0表示全部专业
+      showSearchResults: false,
+      searchResults: [],
       tabList: [
         { name: '建筑设计' },
         { name: '结构设计' },
@@ -135,7 +183,7 @@ export default {
           { image: '/images/index/电气设计推广4.jpg', text: '电气设计推广4' }
         ]
       ],
-      swiperTimers: [],
+      swiperTimer: null,
       // 使用数组存储所有专业的课程数据
       courseLists: [
         [
@@ -182,27 +230,90 @@ export default {
     }
   },
   methods: {
+    searchCourses() {
+      if (!this.keyword.trim()) {
+        this.showSearchResults = false;
+        this.current = 0; // 重置到建筑设计标签页
+        return;
+      }
+      
+      // 重置搜索结果
+      this.searchResults = [];
+      
+      // 遍历所有专业的所有课程进行搜索
+      for (let typeIndex = 0; typeIndex < this.courseLists.length; typeIndex++) {
+        const courseType = typeIndex + 1; // 类型编号从1开始
+        
+        // 如果选择了特定专业且当前专业不匹配，则跳过
+        if (this.selectedMajor !== '0' && parseInt(this.selectedMajor) !== courseType) {
+          continue;
+        }
+        
+        const courseList = this.courseLists[typeIndex];
+        
+        // 过滤出标题包含关键词的课程
+        const matchedCourses = courseList.filter(course => 
+          course.title.includes(this.keyword)
+        );
+        
+        // 为匹配的课程添加类型信息并添加到搜索结果中
+        matchedCourses.forEach(course => {
+          this.searchResults.push({
+            ...course,
+            type: courseType
+          });
+        });
+      }
+      
+      this.showSearchResults = true;
+    },
+    // 重置页面状态
+    resetToHomeTab() {
+      this.current = 0; // 建筑设计标签的索引
+      this.showSearchResults = false; // 隐藏搜索结果
+      this.keyword = ''; // 清空搜索关键词
+      this.selectedMajor = '0'; // 重置到全部专业
+      this.searchResults = []; // 清空搜索结果数组
+    },
     changeTab(index) {
       this.current = index;
       this.currentSlideIndex[index] = 0;
-      this.startSwiper();
+      // 移除这里的startSwiper调用，由watch来处理
     },
     startSwiper() {
-      this.clearSwiperTimers();
-      // 为当前专业创建一个定时器
-      this.swiperTimers.push(setInterval(() => {
-        this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] + 1) % this.currentSwiperList.length;
-      }, 3000));
+      this.clearSwiperTimer();
+      // 只有当页面可见时才创建定时器
+      if (!document.hidden) {
+        this.swiperTimer = setInterval(() => {
+          this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] + 1) % this.currentSwiperList.length;
+        }, 3000);
+      }
     },
-    clearSwiperTimers() {
-      this.swiperTimers.forEach(timer => clearInterval(timer));
-      this.swiperTimers = [];
+    clearSwiperTimer() {
+      if (this.swiperTimer) {
+        clearInterval(this.swiperTimer);
+        this.swiperTimer = null;
+      }
+    },
+    // 重置定时器，用户交互后调用
+    resetSwiperTimer() {
+      this.startSwiper();
     },
     prevSlide() {
       this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] - 1 + this.currentSwiperList.length) % this.currentSwiperList.length;
+      this.resetSwiperTimer(); // 用户交互后重置定时器
     },
     nextSlide() {
       this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] + 1) % this.currentSwiperList.length;
+      this.resetSwiperTimer(); // 用户交互后重置定时器
+    },
+    // 处理页面可见性变化
+    handleVisibilityChange() {
+      if (document.hidden) {
+        this.clearSwiperTimer();
+      } else {
+        this.startSwiper();
+      }
     },
     goCourse(type, id) {
       this.$router.push({
@@ -257,9 +368,13 @@ export default {
   mounted() {
     this.loadCourseData();
     this.startSwiper();
+    // 添加页面可见性变化监听
+    document.addEventListener('visibilitychange', this.handleVisibilityChange);
   },
   beforeUnmount() {
-    this.clearSwiperTimers();
+    this.clearSwiperTimer();
+    // 移除事件监听
+    document.removeEventListener('visibilitychange', this.handleVisibilityChange);
   },
   watch: {
     current() {
@@ -450,7 +565,77 @@ export default {
   font-size: 14px;
 }
 
+/* 搜索栏样式 */
+.search-section {
+  margin-bottom: 30px;
+}
 
+.search-box {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 44px;
+}
 
+.search-input {
+  flex: 1;
+  padding: 0 16px;
+  border: 2px solid #5074FF;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.major-select {
+  padding: 0 12px;
+  border: 2px solid #5074FF;
+  border-left: none;
+  border-right: none;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.major-select:focus {
+  border-color: #5074FF;
+}
+
+.search-btn {
+  padding: 0 24px;
+  background-color: #5074FF;
+  color: #fff;
+  border: 2px solid #5074FF;
+  border-radius: 0 4px 4px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #405ecb;
+}
+
+/* 搜索结果样式 */
+.search-results {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* 无搜索结果样式 */
+.no-results {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  color: #666;
+}
 
 </style>

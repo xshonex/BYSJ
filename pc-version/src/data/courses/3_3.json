@@ -3,7 +3,7 @@
   "title": "水质工程学",
   "category": "给排水设计",
   "image": "/images/index/给排水设计推广3.jpg",
-  "tag": "实战课程",
+  "tag": "给排水",
   "chapters": [
     {
       "title": "第一章 给水处理",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "深度处理工艺",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "污泥处理处置",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "水厂平面布置",
           "isActive": false
         }

@@ -3,7 +3,7 @@
   "title": "通风工程",
   "category": "暖通设计",
   "image": "/images/index/暖通设计推广3.jpg",
-  "tag": "实战课程",
+  "tag": "暖通",
   "chapters": [
     {
       "title": "第一章 通风基础",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "通风量计算",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "通风附件选型",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "通风系统节能",
           "isActive": false
         }

@@ -3,7 +3,7 @@
   "title": "钢结构设计",
   "category": "结构设计",
   "image": "/images/index/结构设计推广1.jpg",
-  "tag": "新课上线",
+  "tag": "结构",
   "chapters": [
     {
       "title": "第一章 钢结构基本原理",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "钢结构设计原则",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "构件截面选择",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "钢梁构造要求",
           "isActive": false
         }

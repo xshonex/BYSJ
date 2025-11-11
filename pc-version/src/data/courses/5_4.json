@@ -3,7 +3,7 @@
   "title": "电气安全与节能",
   "category": "电气设计",
   "image": "/images/index/电气设计推广4.jpg",
-  "tag": "规范学习",
+  "tag": "电气",
   "chapters": [
     {
       "title": "第一章 电气安全基础",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "接地与接零系统",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "安全评估与认证",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "能效管理系统",
           "isActive": false
         }

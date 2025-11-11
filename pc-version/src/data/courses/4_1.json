@@ -3,7 +3,7 @@
   "title": "暖通空调原理",
   "category": "暖通设计",
   "image": "/images/index/暖通设计推广1.jpg",
-  "tag": "热门课程",
+  "tag": "暖通",
   "chapters": [
     {
       "title": "第一章 空调基础知识",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "空调负荷计算",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "半集中式空调系统",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "空调末端设备",
           "isActive": false
         }

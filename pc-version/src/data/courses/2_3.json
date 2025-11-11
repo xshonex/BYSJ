@@ -3,7 +3,7 @@
   "title": "结构力学",
   "category": "结构设计",
   "image": "/images/index/结构设计推广3.jpg",
-  "tag": "实战课程",
+  "tag": "结构",
   "chapters": [
     {
       "title": "第一章 结构几何组成分析",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "常见结构类型分析",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "静定桁架内力计算",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "力矩分配法",
           "isActive": false
         }

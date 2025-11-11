@@ -3,7 +3,7 @@
   "title": "建筑给排水工程",
   "category": "给排水设计",
   "image": "/images/index/给排水设计推广4.jpg",
-  "tag": "规范学习",
+  "tag": "给排水",
   "chapters": [
     {
       "title": "第一章 建筑给水系统",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "建筑给水设备",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "通气管系统设计",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "消防设计规范",
           "isActive": false
         }

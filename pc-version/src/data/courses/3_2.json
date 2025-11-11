@@ -3,7 +3,7 @@
   "title": "排水工程",
   "category": "给排水设计",
   "image": "/images/index/给排水设计推广2.jpg",
-  "tag": "新课上线",
+  "tag": "给排水",
   "chapters": [
     {
       "title": "第一章 排水系统概述",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "排水系统布置",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "排水管网优化",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "泵站设计案例",
           "isActive": false
         }

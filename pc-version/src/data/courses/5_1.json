@@ -3,7 +3,7 @@
   "title": "建筑供配电",
   "category": "电气设计",
   "image": "/images/index/电气设计推广1.jpg",
-  "tag": "热门课程",
+  "tag": "电气",
   "chapters": [
     {
       "title": "第一章 供配电基础",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "供配电系统设计",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "电气设备保护",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "线路保护配置",
           "isActive": false
         }

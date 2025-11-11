@@ -4,12 +4,11 @@
     <header class="main-header">
       <div class="header-content">
         <div class="logo" @click="goHome">
-            刘传濠的个人学习系统
+            建筑行业学习系统
           </div>
         <nav class="main-nav">
           <router-link to="/" class="nav-item" active-class="active">首页</router-link>
           <router-link to="/learn" class="nav-item" active-class="active">学习</router-link>
-          <!-- <router-link to="/me" class="nav-item" active-class="active">我的</router-link> -->
         </nav>
       </div>
     </header>
@@ -29,9 +28,6 @@
 <script>
 export default {
   name: 'App',
-  mounted() {
-    console.log('App mounted')
-  },
   methods: {
     goHome() {
       this.$router.push('/')
@@ -136,21 +132,6 @@ body {
   width: 100%;
   margin: 20px auto;
   padding: 0 20px;
-}
-
-/* 页脚样式 */
-.main-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-  margin-top: 40px;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
 }
 
 /* 过渡动画 */

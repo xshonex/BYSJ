@@ -3,7 +3,7 @@
   "title": "地基基础设计",
   "category": "结构设计",
   "image": "/images/index/结构设计推广4.jpg",
-  "tag": "规范学习",
+  "tag": "结构",
   "chapters": [
     {
       "title": "第一章 土力学基础",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "地基承载力理论",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "筏板基础设计",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "地基处理方法",
           "isActive": false
         }

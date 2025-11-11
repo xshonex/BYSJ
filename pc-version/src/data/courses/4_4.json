@@ -3,7 +3,7 @@
   "title": "建筑节能技术",
   "category": "暖通设计",
   "image": "/images/index/暖通设计推广4.jpg",
-  "tag": "规范学习",
+  "tag": "暖通",
   "chapters": [
     {
       "title": "第一章 建筑节能基础",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "节能评估方法",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "可再生能源利用",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "节能改造案例",
           "isActive": false
         }

@@ -3,7 +3,7 @@
   "title": "建筑照明",
   "category": "电气设计",
   "image": "/images/index/电气设计推广2.jpg",
-  "tag": "新课上线",
+  "tag": "电气",
   "chapters": [
     {
       "title": "第一章 照明基础",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "照明质量评价",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "LED照明技术",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "绿色照明设计",
           "isActive": false
         }

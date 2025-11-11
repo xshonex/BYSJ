@@ -1,6 +1,6 @@
 <template>
   <div class="learn-page">
-    <h2 class="page-title">我的收藏课程</h2>
+    <h2 class="page-title">收藏课程</h2>
     
     <div v-if="favoriteCourses.length > 0" class="course-list">
       <div 

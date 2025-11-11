@@ -218,11 +218,9 @@ export default {
   mounted() {
     // 根据路由参数加载具体课程数据
     const courseId = this.$route.params.id || '1_1' // 默认加载1_1课程
-    console.log('加载课程ID:', courseId, '可用课程ID列表:', Object.keys(courseDataMap))
     
     // 直接加载默认课程，不再显示警告提示
     this.courseDetail = courseDataMap[courseId] || courseDataMap['1_1']
-    console.log('课程数据加载成功，当前课程ID:', courseId)
     
     // 初始化收藏状态
     this.updateFavoriteStatus()

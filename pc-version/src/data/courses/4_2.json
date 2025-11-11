@@ -3,7 +3,7 @@
   "title": "制冷技术",
   "category": "暖通设计",
   "image": "/images/index/暖通设计推广2.jpg",
-  "tag": "新课上线",
+  "tag": "暖通",
   "chapters": [
     {
       "title": "第一章 制冷原理",
@@ -20,7 +20,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "制冷循环分析",
           "isActive": false
         }
@@ -41,7 +41,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "制冷辅助设备",
           "isActive": false
         }
@@ -62,7 +62,7 @@
           "isActive": false
         },
         {
-          "type": "文档",
+          "type": "视频",
           "title": "制冷系统节能技术",
           "isActive": false
         }
