@@ -14,6 +14,8 @@
           </div>
         <div class="course-info">
           <h3 class="course-title" @click="goCourse(course.id)">{{ course.title }}</h3>
+          <!-- 课程介绍 -->
+          <div class="course-intro-preview" v-html="course.intro || '<p>暂无课程介绍</p>'"></div>
           <div class="course-actions">
             <button 
               class="unfavorite-btn"
@@ -42,19 +44,18 @@ export default {
     }
   },
   created() {
-    // 加载收藏课程
+    // 加载收藏
     this.loadFavorites()
   },
-  // 定期刷新收藏列表，确保与localStorage同步
   mounted() {
-    // 监听页面可见性变化，当页面重新可见时刷新收藏列表
+    // 监听可见性变化
     document.addEventListener('visibilitychange', this.handleVisibilityChange)
   },
   beforeDestroy() {
     document.removeEventListener('visibilitychange', this.handleVisibilityChange)
   },
   watch: {
-    // 监听favoriteCourses变化，实时更新localStorage
+    // 监听收藏变化
     favoriteCourses: {
       handler(newVal) {
         localStorage.setItem('favoriteCourses', JSON.stringify(newVal))
@@ -63,10 +64,9 @@ export default {
     }
   },
   methods: {
-    // 根据课程标题获取对应的图片URL
-    // 直接获取对应专业的第一张推广图片
+    // 获取图片URL
     getCourseImageUrl(title) {
-      // 定义专业关键词和对应的推广图片类型
+      // 专业关键词映射
       const courseTypeMap = [
         { keywords: ['建筑设计'], type: '建筑设计' },
         { keywords: ['力学', '混凝土', '钢结构', '地基'], type: '结构设计' },
@@ -75,12 +75,12 @@ export default {
         { keywords: ['供配电', '照明', '智能化', '电气'], type: '电气设计' }
       ];
       
-      // 查找匹配的专业类型
+      // 查找匹配类型
       const foundType = courseTypeMap.find(item => 
         item.keywords.some(keyword => title.includes(keyword))
       );
       
-      // 返回对应专业的第一张推广图片
+      // 返回对应图片
       const courseType = foundType ? foundType.type : '建筑设计';
       return `/images/index/${courseType}推广1.jpg`;
     },
@@ -90,7 +90,7 @@ export default {
         path: `/course/${id}`
       })
     },
-    // 加载收藏课程
+    // 加载收藏
     loadFavorites() {
       const favorites = localStorage.getItem('favoriteCourses')
       if (favorites) {
@@ -101,14 +101,14 @@ export default {
     toggleFavorite(course) {
       const index = this.favoriteCourses.findIndex(item => item.id === course.id)
       if (index !== -1) {
-        // 取消收藏
+        // 移除收藏
         this.favoriteCourses.splice(index, 1)
       }
     },
-    // 处理页面可见性变化
+    // 页面可见性处理
     handleVisibilityChange() {
       if (!document.hidden) {
-        // 页面重新可见时，重新加载收藏列表
+        // 页面可见时重新加载
         this.loadFavorites()
       }
     }
@@ -177,6 +177,42 @@ export default {
   cursor: pointer;
 }
 
+/* 介绍预览 */
+.course-intro-preview {
+  margin: 10px 0 15px;
+  padding: 12px;
+  background-color: #f5f7fa;
+  border-radius: 6px;
+  line-height: 1.6;
+  color: #666;
+  font-size: 14px;
+  min-height: 60px;
+  border-left: 3px solid #5074FF;
+}
+
+.course-intro-preview p {
+  margin: 4px 0;
+  text-align: justify;
+}
+
+.course-intro-preview::-webkit-scrollbar {
+  width: 4px;
+}
+
+.course-intro-preview::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.course-intro-preview::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.course-intro-preview::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
 .course-actions {
   display: flex;
   justify-content: flex-end;
@@ -198,7 +234,7 @@ export default {
   color: #fff;
 }
 
-/* 空状态样式增强 */
+/* 空状态 */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -218,7 +254,7 @@ export default {
 }
 
 
-/* 响应式调整 */
+/* 响应式 */
 @media (max-width: 768px) {
   .course-item {
     flex-direction: column;

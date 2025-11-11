@@ -1,14 +1,14 @@
 <template>
   <div class="course-detail-page">
-    <!-- 数据加载中提示 -->
+    <!-- 加载提示 -->
     <div v-if="!courseDetail" class="loading-container">
       <div class="loading-spinner"></div>
       <p class="loading-text">正在加载课程信息...</p>
     </div>
     
-    <!-- 课程内容（数据加载完成后显示） -->
+    <!-- 课程内容 -->
     <template v-else>
-      <!-- 课程基本信息 -->
+      <!-- 基本信息 -->
       <div class="course-header">
         <div class="course-main-info">
           <div class="course-cover">
@@ -20,6 +20,8 @@
           <div class="course-meta">
             <span class="category">{{ courseDetail.category }}</span>
           </div>
+          <!-- 详细介绍 -->
+          <div class="course-intro-preview" v-html="courseDetail.intro"></div>
           <div class="course-actions">
             <button 
               class="btn btn-outline" 
@@ -32,7 +34,7 @@
         </div>
       </div>
 
-      <!-- 课程内容导航 -->
+      <!-- 内容导航 -->
       <div class="course-nav">
         <div class="nav-tabs">
           <div 
@@ -46,9 +48,9 @@
         </div>
       </div>
 
-      <!-- 课程内容区域 -->
+      <!-- 内容区域 -->
       <div class="course-content">
-        <!-- 课程章节 -->
+        <!-- 章节列表 -->
         <div v-if="activeTab === 0" class="course-chapters">
           <div 
             v-for="(chapter, chapterIndex) in courseDetail.chapters" 
@@ -92,7 +94,7 @@
 </template>
 
 <script>
-// 静态导入所有课程数据
+// 导入课程数据
 import course1_1 from '@/data/courses/1_1.json'
 import course1_2 from '@/data/courses/1_2.json'
 import course1_3 from '@/data/courses/1_3.json'
@@ -114,7 +116,7 @@ import course5_2 from '@/data/courses/5_2.json'
 import course5_3 from '@/data/courses/5_3.json'
 import course5_4 from '@/data/courses/5_4.json'
 
-// 创建课程数据映射表
+// 课程数据映射
 const courseDataMap = {
   '1_1': course1_1,
   '1_2': course1_2,
@@ -144,17 +146,15 @@ export default {
     return {
       activeTab: 0,
       isFavorite: false,
-      
       tabs: [
         { name: '课程章节' },
         { name: '课程介绍' }
       ],
-      
       courseDetail: null
     }
   },
   methods: {
-    // 获取课程图片URL
+    // 获取图片URL
     getCourseImageUrl() {
       const validCategories = ['建筑设计', '结构设计', '给排水设计', '暖通设计']
       const category = validCategories.includes(this.courseDetail.category) 
@@ -163,7 +163,7 @@ export default {
       return `/images/index/${category}推广1.jpg`
     },
     
-    // 处理页面可见性变化
+    // 页面可见性处理
     handleVisibilityChange() {
       if (!document.hidden && this.courseDetail) {
         // 页面重新可见时，更新收藏状态
@@ -175,7 +175,7 @@ export default {
       const favorites = JSON.parse(localStorage.getItem('favoriteCourses') || '[]')
       this.isFavorite = favorites.some(course => course.id === this.courseDetail.id)
     },
-    // 添加/取消收藏
+    // 收藏操作
     addToFavorite() {
       let favorites = JSON.parse(localStorage.getItem('favoriteCourses') || '[]')
       
@@ -184,9 +184,10 @@ export default {
         const courseToAdd = {
           id: this.courseDetail.id,
           title: this.courseDetail.title,
-          image: '/images/index/' + this.courseDetail.title.replace(/[^\u4e00-\u9fa5]/g, '') + '推广1.jpg'
+          intro: this.courseDetail.intro,
+          image: '/images/index/' + this.courseDetail.title.replace(/[^一-龥]/g, '') + '推广1.jpg'
         }
-        // 检查是否已存在
+        // 检查重复
         const exists = favorites.some(course => course.id === courseToAdd.id)
         if (!exists) {
           favorites.push(courseToAdd)
@@ -204,28 +205,28 @@ export default {
       this.courseDetail.chapters[index].expanded = !this.courseDetail.chapters[index].expanded
     },
     goToSection(chapterIndex, sectionIndex) {
-      // 取消当前活跃状态
+      // 重置活跃状态
       this.courseDetail.chapters.forEach(chapter => {
         chapter.sections.forEach(section => {
           section.isActive = false
         })
       })
-      // 设置新的活跃状态
+      // 设置活跃状态
       this.courseDetail.chapters[chapterIndex].sections[sectionIndex].isActive = true
     },
 
   },
   mounted() {
-    // 根据路由参数加载具体课程数据
+    // 加载课程数据
     const courseId = this.$route.params.id || '1_1' // 默认加载1_1课程
     
-    // 直接加载默认课程，不再显示警告提示
+    // 加载默认课程
     this.courseDetail = courseDataMap[courseId] || courseDataMap['1_1']
     
-    // 初始化收藏状态
+    // 初始化收藏
     this.updateFavoriteStatus()
     
-    // 监听页面可见性变化，确保与Learn页面的收藏状态同步
+    // 监听可见性变化
     document.addEventListener('visibilitychange', this.handleVisibilityChange)
   },
   beforeDestroy() {
@@ -242,7 +243,7 @@ export default {
   gap: 20px;
 }
 
-/* 加载动画样式 */
+/* 加载动画 */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -271,7 +272,7 @@ export default {
   100% { transform: rotate(360deg); }
 }
 
-/* 课程基本信息 */
+/* 基本信息 */
 .course-header {
   background: #fff;
   border-radius: 8px;
@@ -342,7 +343,7 @@ export default {
   background-color: #f0f3ff;
 }
 
-/* 课程内容导航 */
+/* 内容导航 */
 .course-nav {
   background: #fff;
   border-radius: 8px;
@@ -372,7 +373,7 @@ export default {
   border-bottom-color: #5074FF;
 }
 
-/* 课程内容区域 */
+/* 内容区域 */
 .course-content {
   background: #fff;
   border-radius: 8px;
@@ -380,7 +381,7 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 课程章节 */
+/* 章节 */
 .chapter {
   margin-bottom: 20px;
   border: 1px solid #e0e0e0;
@@ -477,7 +478,7 @@ export default {
   color: #333;
 }
 
-/* 课程介绍 */
+/* 介绍内容 */
 .intro-content {
   line-height: 1.8;
   color: #333;
@@ -504,7 +505,24 @@ export default {
 
 
 
-/* 响应式调整 */
+/* 介绍预览 */
+.course-intro-preview {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  line-height: 1.6;
+  color: #333;
+  font-size: 15px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.course-intro-preview p {
+  margin: 8px 0;
+}
+
+/* 响应式 */
 @media (max-width: 768px) {
   .course-main-info {
     flex-direction: column;

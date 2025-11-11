@@ -1,6 +1,5 @@
 <template>
   <div class="home-page">
-
     <!-- 搜索栏 -->
     <div class="search-section">
       <div class="search-box">
@@ -22,7 +21,6 @@
         <button class="search-btn" @click="searchCourses">搜索</button>
       </div>
     </div>
-    
     <!-- 搜索结果区域 -->
     <div v-if="showSearchResults && searchResults.length > 0" class="search-results">
       <h3 class="section-title">搜索结果</h3>
@@ -39,12 +37,10 @@
         </div>
       </div>
     </div>
-    
     <!-- 无搜索结果提示 -->
     <div v-else-if="showSearchResults && searchResults.length === 0" class="no-results">
       <p>未找到相关课程，请尝试其他关键词</p>
     </div>
-
     <!-- 标签页 -->
     <div v-if="!showSearchResults" class="tabs-container">
       <div class="tabs">
@@ -57,11 +53,10 @@
           {{ tab.name }}
         </button>
       </div>
-
-      <!-- 标签内容 - 动态渲染当前专业的内容 -->
+    <!-- 标签内容 -->
       <div class="tab-content">
         <div class="tab-pane">
-          <!-- 轮播图区域 -->
+          <!-- 轮播图 -->
           <div class="banner-swiper">
             <!-- 轮播图片 -->
             <div class="swiper-container">
@@ -74,7 +69,7 @@
                 :class="{ active: currentSlideIndex[current] === index }"
               />
             </div>
-            <!-- 左右箭头 -->
+            <!-- 控制按钮 -->
             <button class="swiper-prev" @click="prevSlide">&lt;</button>
             <button class="swiper-next" @click="nextSlide">&gt;</button>
             <!-- 指示器 -->
@@ -88,7 +83,7 @@
             </div>
           </div>
 
-          <!-- 课程列表区域 -->
+          <!-- 课程列表 -->
           <div class="courses-section">
             <h3 class="section-title">推荐课程</h3>
             <div class="courses-grid">
@@ -111,7 +106,7 @@
 </template>
 
 <script>
-// 静态导入所有课程JSON文件
+// 导入课程数据
 import course1_1 from '../data/courses/1_1.json';
 import course1_2 from '../data/courses/1_2.json';
 import course1_3 from '../data/courses/1_3.json';
@@ -150,7 +145,7 @@ export default {
         { name: '暖通设计' },
         { name: '电气设计' }
       ],
-      // 使用数组存储所有专业的轮播数据
+      // 轮播数据
       swiperLists: [
         [
           { image: '/images/index/建筑设计推广1.jpg', text: '建筑设计推广1' },
@@ -184,7 +179,7 @@ export default {
         ]
       ],
       swiperTimer: null,
-      // 使用数组存储所有专业的课程数据
+      // 课程数据
       courseLists: [
         [
             { id: 1, title: '建筑设计从入门到精通' },
@@ -220,11 +215,11 @@ export default {
     }
   },
   computed: {
-    // 计算属性：获取当前专业的轮播数据
+    // 当前轮播数据
     currentSwiperList() {
       return this.swiperLists[this.current];
     },
-    // 计算属性：获取当前专业的课程数据
+    // 当前课程数据
     currentCourseList() {
       return this.courseLists[this.current];
     }
@@ -236,7 +231,6 @@ export default {
         this.current = 0; // 重置到建筑设计标签页
         return;
       }
-      
       // 重置搜索结果
       this.searchResults = [];
       
@@ -244,19 +238,19 @@ export default {
       for (let typeIndex = 0; typeIndex < this.courseLists.length; typeIndex++) {
         const courseType = typeIndex + 1; // 类型编号从1开始
         
-        // 如果选择了特定专业且当前专业不匹配，则跳过
+        // 筛选专业
         if (this.selectedMajor !== '0' && parseInt(this.selectedMajor) !== courseType) {
           continue;
         }
         
         const courseList = this.courseLists[typeIndex];
         
-        // 过滤出标题包含关键词的课程
+        // 筛选课程
         const matchedCourses = courseList.filter(course => 
           course.title.includes(this.keyword)
         );
         
-        // 为匹配的课程添加类型信息并添加到搜索结果中
+        // 添加到结果
         matchedCourses.forEach(course => {
           this.searchResults.push({
             ...course,
@@ -267,7 +261,7 @@ export default {
       
       this.showSearchResults = true;
     },
-    // 重置页面状态
+    // 重置页面
     resetToHomeTab() {
       this.current = 0; // 建筑设计标签的索引
       this.showSearchResults = false; // 隐藏搜索结果
@@ -278,11 +272,10 @@ export default {
     changeTab(index) {
       this.current = index;
       this.currentSlideIndex[index] = 0;
-      // 移除这里的startSwiper调用，由watch来处理
     },
     startSwiper() {
       this.clearSwiperTimer();
-      // 只有当页面可见时才创建定时器
+      // 页面可见时创建定时器
       if (!document.hidden) {
         this.swiperTimer = setInterval(() => {
           this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] + 1) % this.currentSwiperList.length;
@@ -295,19 +288,19 @@ export default {
         this.swiperTimer = null;
       }
     },
-    // 重置定时器，用户交互后调用
+    // 重置定时器
     resetSwiperTimer() {
       this.startSwiper();
     },
     prevSlide() {
       this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] - 1 + this.currentSwiperList.length) % this.currentSwiperList.length;
-      this.resetSwiperTimer(); // 用户交互后重置定时器
+      this.resetSwiperTimer();
     },
     nextSlide() {
       this.currentSlideIndex[this.current] = (this.currentSlideIndex[this.current] + 1) % this.currentSwiperList.length;
-      this.resetSwiperTimer(); // 用户交互后重置定时器
+      this.resetSwiperTimer();
     },
-    // 处理页面可见性变化
+    // 页面可见性变化处理
     handleVisibilityChange() {
       if (document.hidden) {
         this.clearSwiperTimer();
@@ -320,9 +313,9 @@ export default {
         path: `/course/${type}_${id}`
       });
     },
-    // 加载课程数据，从静态导入的JSON文件中获取image和tag
+    // 加载课程数据
     loadCourseData() {
-      // 创建课程数据映射
+      // 课程数据映射
       const courseDataMap = {
         '1_1': course1_1,
         '1_2': course1_2,
@@ -346,12 +339,12 @@ export default {
         '5_4': course5_4
       };
       
-      // 遍历所有课程类型
+      // 遍历课程类型
       for (let typeIndex = 0; typeIndex < this.courseLists.length; typeIndex++) {
         const courseType = typeIndex + 1; // 类型编号从1开始
         const courseList = this.courseLists[typeIndex];
         
-        // 遍历当前类型的所有课程
+        // 遍历当前课程
         for (let courseIndex = 0; courseIndex < courseList.length; courseIndex++) {
           const courseId = courseList[courseIndex].id;
           const courseKey = `${courseType}_${courseId}`;
@@ -368,12 +361,12 @@ export default {
   mounted() {
     this.loadCourseData();
     this.startSwiper();
-    // 添加页面可见性变化监听
+    // 添加事件监听
     document.addEventListener('visibilitychange', this.handleVisibilityChange);
   },
   beforeUnmount() {
     this.clearSwiperTimer();
-    // 移除事件监听
+    // 移除监听
     document.removeEventListener('visibilitychange', this.handleVisibilityChange);
   },
   watch: {
@@ -385,13 +378,12 @@ export default {
 </script>
 
 <style scoped>
-
 /* 主容器 */
 .home-page {
   padding: 20px;
 }
 
-/* 标签页容器 */
+/* 标签页 */
 .tabs-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -429,7 +421,7 @@ export default {
   background-color: #fff;
 }
 
-/* 轮播图区域 */
+/* 轮播图 */
 .banner-swiper {
   position: relative;
   height: 400px;
@@ -460,7 +452,7 @@ export default {
   opacity: 1;
 }
 
-/* 轮播控制按钮 */
+/* 控制按钮 */
 .swiper-prev,
 .swiper-next {
   position: absolute;
@@ -565,7 +557,7 @@ export default {
   font-size: 14px;
 }
 
-/* 搜索栏样式 */
+/* 搜索栏 */
 .search-section {
   margin-bottom: 30px;
 }
@@ -618,7 +610,7 @@ export default {
   background-color: #405ecb;
 }
 
-/* 搜索结果样式 */
+/* 搜索结果 */
 .search-results {
   max-width: 1200px;
   margin: 0 auto 30px;
@@ -628,7 +620,7 @@ export default {
   padding: 20px;
 }
 
-/* 无搜索结果样式 */
+/* 无搜索结果 */
 .no-results {
   max-width: 1200px;
   margin: 0 auto 30px;
