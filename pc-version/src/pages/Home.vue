@@ -581,7 +581,7 @@ export default {
   flex: 1;
   padding: 0 16px;
   border: 2px solid #5074FF;
-  border-right: none;
+  border-right: 1px solid #5074FF;
   border-radius: 4px 0 0 4px;
   font-size: 16px;
 }
@@ -589,9 +589,11 @@ export default {
 .major-select {
   padding: 0 12px;
   border: 2px solid #5074FF;
-  border-left: none;
+  border-left: 1px solid #5074FF;
   border-right: none;
   font-size: 16px;
+  font-weight: 500;
+  color: #333;
   outline: none;
   cursor: pointer;
   background-color: white;

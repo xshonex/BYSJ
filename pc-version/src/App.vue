@@ -15,11 +15,14 @@
 
     <!-- 主要内容区域 -->
     <main class="main-content">
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
+      <!-- 使用el-card组件美化内容区域 -->
+      <el-card shadow="hover" style="margin-bottom: 20px; border-radius: 12px; overflow: hidden;">
+        <router-view v-slot="{ Component }">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </el-card>
     </main>
 
   </div>
@@ -58,9 +61,10 @@ export default {
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: #333;
-  background-color: #f5f5f5;
+  background: white;
   line-height: 1.6;
 }
+
 
 .app-container {
   min-height: 100vh;
@@ -70,11 +74,19 @@ body {
 
 /* 头部样式 */
 .main-header {
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  /* 半透明背景配合渐变 */
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* 导航栏滚动效果 */
+.main-header:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
 .header-content {
@@ -93,15 +105,20 @@ body {
   gap: 15px;
   text-align: center;
   justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  /* 修改为蓝色系颜色 */
+  color: #0066ff;
+  letter-spacing: 1px;
 }
 
 .logo img {
   height: 60px;
+  transition: transform 0.3s ease;
 }
 
-.logo h1 {
-  font-size: 24px;
-  color: #333;
+.logo img:hover {
+  transform: rotate(5deg) scale(1.1);
 }
 
 .main-nav {
@@ -114,15 +131,39 @@ body {
   color: #666;
   font-size: 16px;
   font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.nav-item:hover,
+/* 导航项悬停效果 */
+.nav-item:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #0066ff 0%, #0088ff 100%);
+  transform: translateY(-2px);
+}
+
 .nav-item.active {
-  color: #5074FF;
-  background-color: #f0f3ff;
+  color: #fff;
+  background: linear-gradient(135deg, #0066ff 0%, #0088ff 100%);
+}
+
+/* 添加导航项下划线动画 */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #0066ff, #0088ff);
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
 }
 
 /* 主内容区样式 */
@@ -132,6 +173,9 @@ body {
   width: 100%;
   margin: 20px auto;
   padding: 0 20px;
+  /* 内容区域添加内边距，避免紧贴边缘 */
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 /* 过渡动画 */
