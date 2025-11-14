@@ -35,6 +35,17 @@
   </div>
 </template>
 
+
+
+
+
+
+
+
+
+
+
+
 <script>
 export default {
   name: 'Learn',
@@ -115,6 +126,25 @@ export default {
   }
 }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 .learn-page {

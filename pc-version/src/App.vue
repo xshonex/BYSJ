@@ -8,7 +8,7 @@
           </div>
         <nav class="main-nav">
           <router-link to="/" class="nav-item" active-class="active">首页</router-link>
-          <router-link to="/learn" class="nav-item" active-class="active">学习</router-link>
+          <router-link to="/learn" class="nav-item" active-class="active">学习中心</router-link>
         </nav>
       </div>
     </header>

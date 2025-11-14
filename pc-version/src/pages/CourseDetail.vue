@@ -93,6 +93,20 @@
   </div>
 </template>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
 // 导入课程数据
 import course1_1 from '@/data/courses/1_1.json'
@@ -153,6 +167,7 @@ export default {
       courseDetail: null
     }
   },
+  
   methods: {
     // 获取图片URL
     getCourseImageUrl() {
@@ -204,18 +219,21 @@ export default {
     toggleChapter(index) {
       this.courseDetail.chapters[index].expanded = !this.courseDetail.chapters[index].expanded
     },
+
+    // 跳转到指定小节
     goToSection(chapterIndex, sectionIndex) {
-      // 重置活跃状态
+      // 重置所有小节的活跃状态
       this.courseDetail.chapters.forEach(chapter => {
         chapter.sections.forEach(section => {
           section.isActive = false
         })
       })
-      // 设置活跃状态
+      // 设置当前小节为活跃状态
       this.courseDetail.chapters[chapterIndex].sections[sectionIndex].isActive = true
     },
 
   },
+
   mounted() {
     // 加载课程数据
     const courseId = this.$route.params.id || '1_1' // 默认加载1_1课程
@@ -234,6 +252,28 @@ export default {
   }
 }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 .course-detail-page {

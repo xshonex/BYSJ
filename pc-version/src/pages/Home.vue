@@ -105,6 +105,21 @@
   </div>
 </template>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
 // 导入课程数据
 import course1_1 from '../data/courses/1_1.json';
@@ -376,6 +391,29 @@ export default {
   }
 };
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 /* 主容器 */
