@@ -10,17 +10,17 @@
       "expanded": true,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "给水系统分类",
           "isActive": true
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "设计用水量计算",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "给水系统布置",
           "isActive": false
         }
@@ -31,17 +31,17 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "水源选择与保护",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "取水构筑物设计",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "取水系统布置",
           "isActive": false
         }
@@ -52,22 +52,22 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "管网水力计算",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "管道材料与附件",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "管网优化设计",
           "isActive": false
         }
       ]
     }
   ],
-  "intro": "<p>本课程系统讲解给水工程的基本理论和设计方法，是给排水专业的核心课程。</p><p>内容包括给水系统概述、取水工程和给水管网设计等，培养学生解决给水工程实际问题的能力。</p>"
+  "intro": "<p>本资料系统讲解给水工程的基本理论和设计方法，是给排水专业的核心资料。</p><p>内容包括给水系统概述、取水工程和给水管网设计等，培养学生解决给水工程实际问题的能力。</p>"
 }

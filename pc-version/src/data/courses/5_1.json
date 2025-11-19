@@ -10,17 +10,17 @@
       "expanded": true,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "电力系统概述",
           "isActive": true
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "负荷计算",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "供配电系统设计",
           "isActive": false
         }
@@ -31,17 +31,17 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "变压器选择",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "高低压设备",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "电气设备保护",
           "isActive": false
         }
@@ -52,22 +52,22 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "电缆选择与敷设",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "母线系统设计",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "线路保护配置",
           "isActive": false
         }
       ]
     }
   ],
-  "intro": "<p>本课程系统讲解建筑供配电的基本原理和设计方法，是电气专业的核心基础课程。</p><p>内容包括供配电基础、电气设备和配电线路等，培养学生的建筑电气设计能力。</p>"
+  "intro": "<p>本资料系统讲解建筑供配电的基本原理和设计方法，是电气专业的核心基础资料。</p><p>内容包括供配电基础、电气设备和配电线路等，培养学生的建筑电气设计能力。</p>"
 }

@@ -3,10 +3,10 @@
     <!-- 加载提示 -->
     <div v-if="!courseDetail" class="loading-container">
       <div class="loading-spinner"></div>
-      <p class="loading-text">正在加载课程信息...</p>
+      <p class="loading-text">正在加载资料信息...</p>
     </div>
     
-    <!-- 课程内容 -->
+    <!-- 资料内容 -->
     <template v-else>
       <!-- 基本信息 -->
       <div class="course-header">
@@ -84,7 +84,7 @@
           </div>
         </div>
 
-        <!-- 课程介绍 -->
+        <!-- 资料介绍 -->
         <div v-if="activeTab === 1" class="course-intro">
           <div class="intro-content" v-html="courseDetail.intro"></div>
         </div>
@@ -108,7 +108,7 @@
 
 
 <script>
-// 导入课程数据
+// 导入资料数据
 import course1_1 from '@/data/courses/1_1.json'
 import course1_2 from '@/data/courses/1_2.json'
 import course1_3 from '@/data/courses/1_3.json'
@@ -130,7 +130,7 @@ import course5_2 from '@/data/courses/5_2.json'
 import course5_3 from '@/data/courses/5_3.json'
 import course5_4 from '@/data/courses/5_4.json'
 
-// 课程数据映射
+// 资料数据映射
 const courseDataMap = {
   '1_1': course1_1,
   '1_2': course1_2,
@@ -161,8 +161,8 @@ export default {
       activeTab: 0,
       isFavorite: false,
       tabs: [
-        { name: '课程章节' },
-        { name: '课程介绍' }
+        { name: '资料章节' },
+        { name: '资料介绍' }
       ],
       courseDetail: null
     }
@@ -235,10 +235,10 @@ export default {
   },
 
   mounted() {
-    // 加载课程数据
-    const courseId = this.$route.params.id || '1_1' // 默认加载1_1课程
+    // 加载资料数据
+    const courseId = this.$route.params.id || '1_1' // 默认加载1_1资料
     
-    // 加载默认课程
+    // 加载默认资料
     this.courseDetail = courseDataMap[courseId] || courseDataMap['1_1']
     
     // 初始化收藏

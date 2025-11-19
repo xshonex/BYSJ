@@ -1,6 +1,6 @@
 <template>
   <div class="learn-page">
-    <h2 class="page-title">收藏课程</h2>
+    <h2 class="page-title">收藏资料</h2>
     
     <div v-if="favoriteCourses.length > 0" class="course-list">
       <div 
@@ -14,8 +14,8 @@
           </div>
         <div class="course-info">
           <h3 class="course-title" @click="goCourse(course.id)">{{ course.title }}</h3>
-          <!-- 课程介绍 -->
-          <div class="course-intro-preview" v-html="course.intro || '<p>暂无课程介绍</p>'"></div>
+          <!-- 资料介绍 -->
+          <div class="course-intro-preview" v-html="course.intro || '<p>暂无资料介绍</p>'"></div>
           <div class="course-actions">
             <button 
               class="unfavorite-btn"
@@ -30,7 +30,7 @@
     
     <!-- 空状态 -->
     <div v-else class="empty-state">
-      <div class="empty-text">暂无收藏课程</div>
+      <div class="empty-text">暂无收藏资料</div>
     </div>
   </div>
 </template>

@@ -23,7 +23,7 @@ const routes = [
     component: () => import('@/pages/CourseDetail.vue'),
     props: true,
     meta: {
-      title: '课程详情 - 建筑行业学习系统'
+      title: '资料详情 - 建筑行业学习系统'
     }
   },
   // 404页面

@@ -10,17 +10,17 @@
       "expanded": true,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "基础构造知识",
           "isActive": true
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "墙体构造",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "楼地面构造",
           "isActive": false
         }
@@ -31,17 +31,17 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "传统建筑材料",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "新型建筑材料",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "材料性能与应用",
           "isActive": false
         }
@@ -52,22 +52,22 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "典型构造做法",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "构造设计要点",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "构造详图绘制",
           "isActive": false
         }
       ]
     }
   ],
-  "intro": "<p>本课程详细讲解建筑构造原理和建筑材料应用，是建筑专业的核心技术课程。</p><p>内容包括基础构造知识、墙体构造、建筑材料特性及构造设计案例等，培养学生的实践能力。</p>"
+  "intro": "<p>本资料详细讲解建筑构造原理和建筑材料应用，是建筑专业的核心技术资料。</p><p>内容包括基础构造知识、墙体构造、建筑材料特性及构造设计案例等，培养学生的实践能力。</p>"
 }

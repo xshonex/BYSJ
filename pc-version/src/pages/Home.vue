@@ -39,7 +39,7 @@
     </div>
     <!-- 无搜索结果提示 -->
     <div v-else-if="showSearchResults && searchResults.length === 0" class="no-results">
-      <p>未找到相关课程，请尝试其他关键词</p>
+      <p>未找到相关资料，请尝试其他关键词</p>
     </div>
     <!-- 标签页 -->
     <div v-if="!showSearchResults" class="tabs-container">
@@ -83,9 +83,9 @@
             </div>
           </div>
 
-          <!-- 课程列表 -->
+          <!-- 资料列表 -->
           <div class="courses-section">
-            <h3 class="section-title">推荐课程</h3>
+            <h3 class="section-title">推荐资料</h3>
             <div class="courses-grid">
               <div 
                 v-for="(item, index) in currentCourseList" 
@@ -121,7 +121,7 @@
 
 
 <script>
-// 导入课程数据
+// 导入资料数据
 import course1_1 from '../data/courses/1_1.json';
 import course1_2 from '../data/courses/1_2.json';
 import course1_3 from '../data/courses/1_3.json';
@@ -194,7 +194,7 @@ export default {
         ]
       ],
       swiperTimer: null,
-      // 课程数据
+      // 资料数据
       courseLists: [
         [
             { id: 1, title: '建筑设计从入门到精通' },
@@ -234,7 +234,7 @@ export default {
     currentSwiperList() {
       return this.swiperLists[this.current];
     },
-    // 当前课程数据
+    // 当前资料数据
     currentCourseList() {
       return this.courseLists[this.current];
     }
@@ -249,7 +249,7 @@ export default {
       // 重置搜索结果
       this.searchResults = [];
       
-      // 遍历所有专业的所有课程进行搜索
+      // 遍历所有专业的所有资料进行搜索
       for (let typeIndex = 0; typeIndex < this.courseLists.length; typeIndex++) {
         const courseType = typeIndex + 1; // 类型编号从1开始
         
@@ -260,7 +260,7 @@ export default {
         
         const courseList = this.courseLists[typeIndex];
         
-        // 筛选课程
+        // 筛选资料
         const matchedCourses = courseList.filter(course => 
           course.title.includes(this.keyword)
         );
@@ -328,9 +328,9 @@ export default {
         path: `/course/${type}_${id}`
       });
     },
-    // 加载课程数据
+    // 加载资料数据
     loadCourseData() {
-      // 课程数据映射
+      // 资料数据映射
       const courseDataMap = {
         '1_1': course1_1,
         '1_2': course1_2,
@@ -354,12 +354,12 @@ export default {
         '5_4': course5_4
       };
       
-      // 遍历课程类型
+      // 遍历资料类型
       for (let typeIndex = 0; typeIndex < this.courseLists.length; typeIndex++) {
         const courseType = typeIndex + 1; // 类型编号从1开始
         const courseList = this.courseLists[typeIndex];
         
-        // 遍历当前课程
+        // 遍历当前资料
         for (let courseIndex = 0; courseIndex < courseList.length; courseIndex++) {
           const courseId = courseList[courseIndex].id;
           const courseKey = `${courseType}_${courseId}`;
@@ -538,7 +538,7 @@ export default {
   background: white;
 }
 
-/* 课程区域 */
+/* 资料区域 */
 .courses-section {
   padding: 20px;
 }
@@ -556,7 +556,7 @@ export default {
   gap: 20px;
 }
 
-/* 课程卡片 */
+/* 资料卡片 */
 .course-card {
   background: #fafafa;
   border-radius: 8px;

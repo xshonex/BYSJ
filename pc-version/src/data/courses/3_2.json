@@ -10,17 +10,17 @@
       "expanded": true,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "排水系统分类",
           "isActive": true
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "污水量计算",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "排水系统布置",
           "isActive": false
         }
@@ -31,17 +31,17 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "管渠水力计算",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "管渠材料与接口",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "排水管网优化",
           "isActive": false
         }
@@ -52,22 +52,22 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "泵站类型选择",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "泵的选型与布置",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "泵站设计案例",
           "isActive": false
         }
       ]
     }
   ],
-  "intro": "<p>本课程系统讲解排水工程的基本理论和设计方法，是给排水专业的核心课程。</p><p>内容包括排水系统概述、排水管渠设计和排水泵站设计等，培养学生解决排水工程实际问题的能力。</p>"
+  "intro": "<p>本资料系统讲解排水工程的基本理论和设计方法，是给排水专业的核心资料。</p><p>内容包括排水系统概述、排水管渠设计和排水泵站设计等，培养学生解决排水工程实际问题的能力。</p>"
 }

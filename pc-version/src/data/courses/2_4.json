@@ -10,17 +10,17 @@
       "expanded": true,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "土的物理性质",
           "isActive": true
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "土的力学性能",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "地基承载力理论",
           "isActive": false
         }
@@ -31,17 +31,17 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "独立基础设计",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "条形基础设计",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "筏板基础设计",
           "isActive": false
         }
@@ -52,22 +52,22 @@
       "expanded": false,
       "sections": [
         {
-          "type": "视频",
+          "type": "文档",
           "title": "桩基础类型选择",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "桩基础承载力计算",
           "isActive": false
         },
         {
-          "type": "视频",
+          "type": "文档",
           "title": "地基处理方法",
           "isActive": false
         }
       ]
     }
   ],
-  "intro": "<p>本课程讲解地基基础设计的基本原理和方法，是结构专业的重要课程。</p><p>内容包括土力学基础、浅基础设计和深基础设计等，培养学生解决地基基础工程问题的能力。</p>"
+  "intro": "<p>本资料讲解地基基础设计的基本原理和方法，是结构专业的重要资料。</p><p>内容包括土力学基础、浅基础设计和深基础设计等，培养学生解决地基基础工程问题的能力。</p>"
 }
